@@ -4,6 +4,8 @@
 .head {
 	font-family: $font-utility;
 	text-transform: uppercase;
+	background-color: $white;
+	z-index: 10;
 	a {
 		display: inline-block;
 		color: $blue;

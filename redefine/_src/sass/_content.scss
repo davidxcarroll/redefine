@@ -1,18 +1,52 @@
 // STRUCTURE
 // ============================================================
 
-.outer   {}
-.inner   { @include outer-container; }
-.content {}
+.outer,
+.inner,
+.content {
+	position: relative;
+}
 
-.wrap { @include outer-container; }
+.outer {
+	// overflow: hidden;
+	z-index: 1;
+}
+.inner {
+	@include outer-container;
+	z-index: 2;
+}
+.content {
+	z-index: 3;
+}
+
+.bg-image {
+	position: absolute;
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+	img {
+		position: absolute; 
+	  top: 0; 
+	  left: 0; 
+	  right: 0; 
+	  bottom: 0; 
+	  margin: auto; 
+	  min-width: 50%;
+	  min-height: 50%;
+	}
+}
 
 // CONTENT
 // ============================================================
 
 .hero {
+	min-height: 75vh;
 	.inner {
 		@include pad(4em 0 5em);
+	}
+	p {
+		@include margin(.8em null 0);
 	}
 	.btn {
 		@include margin(null null -3em);

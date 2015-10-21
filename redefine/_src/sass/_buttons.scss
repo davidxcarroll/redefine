@@ -2,7 +2,7 @@
 // ============================================================
 
 .btn {
-  @include margin(null 1em null null);
+  @include margin(null .5em null);
   font-family: $font-utility;
   text-transform: uppercase;
   @include corners(6px);

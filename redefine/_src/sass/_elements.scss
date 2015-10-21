@@ -19,6 +19,7 @@
 
 .bg-black      { background-color: $black; }
 .bg-blue       { background-color: $blue; }
+.bg-orange     { background-color: $blue; }
 .bg-suds1      { background-color: $suds1; }
 .bg-suds2      { background-color: $suds2; }
 .bg-grey       { background-color: lighten($black,65); }
@@ -26,9 +27,9 @@
 
 .bg-white-gradient { @include linear-gradient(to top, darken($white, 10) 0%, $white 20%); }
 
-.bg-photo {
-	background-image: url(../_img/bg-photo.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-}
+// .bg-photo {
+// 	background-image: url(../_img/bg-photo.jpg);
+// 	background-repeat: no-repeat;
+// 	background-size: cover;
+// 	background-position: center center;
+// }
