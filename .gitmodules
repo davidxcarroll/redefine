@@ -1,0 +1,3 @@
+[submodule "redefine/_public/wp-local/wp-content/themes/redefine-theme"]
+	path = redefine/_public/wp-local/wp-content/themes/redefine-theme
+	url = git://github.com/davidxcarroll/redefine
