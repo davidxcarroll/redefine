@@ -74,7 +74,7 @@ h6 {
 }
 
 p {
-	@include margin(null null 1.4em);
+	@include margin(1em null);
 	font-family: $font-body;
 	@include media(min-width $tablet) {
 		font-size: 1.2em;

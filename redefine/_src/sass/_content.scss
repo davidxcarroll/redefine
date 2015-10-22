@@ -8,7 +8,7 @@
 }
 
 .outer {
-	// overflow: hidden;
+	overflow: hidden;
 	z-index: 1;
 }
 .inner {
@@ -45,11 +45,13 @@
 	.inner {
 		@include pad(4em 0 5em);
 	}
-	p {
-		@include margin(.8em null 0);
-	}
+	.content {
+		box-shadow:
+			0 $stroke 0 rgba(0,0,0,.1),
+			inset 0 -4px 0 rgba(0,0,0,.1);
+			@include linear-gradient(to top, darken($white, 10) 0%, $white 20%); }
 	.btn {
-		@include margin(null null -3em);
+		@include margin(0 null -2em);
 	}
 }
 

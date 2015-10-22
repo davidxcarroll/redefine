@@ -11,7 +11,7 @@
 .center { @include text-align(center); }
 
 .padding-x { @include pad(0 2em); }
-.padding-y { @include pad(2em 0 3em); }
+.padding-y { @include pad(2em 0); }
 .padding { @include pad(2em); }
 
 .drop-shadow  { box-shadow: 0 $stroke 0 rgba(0,0,0,.1); }
@@ -20,8 +20,8 @@
 .bg-black      { background-color: $black; }
 .bg-blue       { background-color: $blue; }
 .bg-orange     { background-color: $blue; }
-.bg-suds1      { background-color: $suds1; }
-.bg-suds2      { background-color: $suds2; }
+.bg-suds-1     { background-color: $suds1; }
+.bg-suds-2     { background-color: $suds2; }
 .bg-grey       { background-color: lighten($black,65); }
 .bg-white      { background-color: $white; }
 

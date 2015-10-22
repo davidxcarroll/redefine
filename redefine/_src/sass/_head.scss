@@ -5,6 +5,9 @@
 	font-family: $font-utility;
 	text-transform: uppercase;
 	background-color: $white;
+	box-shadow:
+		0 $stroke 0 rgba(0,0,0,.1),
+		inset 0 -4px 0 rgba(0,0,0,.03);
 	z-index: 10;
 	a {
 		display: inline-block;
@@ -48,8 +51,9 @@
 		letter-spacing: .2em;
 		a {
 			display: block;
-			@include pad(1.4em 1em);
+			@include pad(1.2em 1em);
 			&:hover {
+				box-shadow: inset 0 -4px 0 transparentize($black,.9);
 				color: lighten($blue, 20);
 			}
 		}
@@ -61,7 +65,7 @@
 }
 
 .nav-utility {
-	@include pad(1.4em 1em 0 0);
+	@include pad(1.2em 1em 0 0);
 	text-align: right;
 	li {
 		display: inline-block;
