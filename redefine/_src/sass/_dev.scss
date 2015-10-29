@@ -1,0 +1,32 @@
+// DEV
+// ============================================================
+
+body {
+	background: darken($white, 20);
+}
+
+code {
+	display: block;
+	@include pad(2em);
+	@include text-align(center);
+	clear: both;
+	fieldset {
+		@include margin(0);
+		@include pad(0);
+		background: none;
+		border: none;
+		legend {
+			@include margin(null null 1em);
+		}
+		label {
+			display: inline-block;
+			@include margin(null .4em);
+			font-family: inherit;
+			font-weight: inherit;
+		}
+	}
+}
+
+.hero {
+	height: 75vh;
+}

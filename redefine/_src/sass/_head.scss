@@ -18,16 +18,22 @@
 .head-left {
 	@include span-columns(3);
 }
-
 .head-right {
 	@include span-columns(9);
 	@include omega;
 }
 
-.logo {
+// LOGO
+// ====================
+
+.logo-wrap {
 	@include text-align(center);
 	h1  { @include hidden; }
-	img { @include size(14em 3em); }
+	.logo {
+		img {
+			@include size(14em 3em);
+		}
+	}
 	h2  {
 		@include margin(0);
 		font-size: 1em;
@@ -36,36 +42,76 @@
 	}
 	a {
 		display: block;
-		@include pad(1em 0);
+		@include pad(1.5em 0);
 		&:hover h2 {
 			color: lighten($blue, 20);
 		}
 	}
 }
 
+// NAV PRIMARY
+// ====================
+
 .nav-primary {
-	text-align: right;
 	li {
 		display: inline-block;
 		font-size: 1em;
-		letter-spacing: .2em;
 		a {
 			display: block;
-			@include pad(1.2em 1em);
-			&:hover {
-				box-shadow: inset 0 -4px 0 transparentize($black,.9);
-				color: lighten($blue, 20);
-			}
-		}
-		&.selected {
-			a { color: $blue; }
-			box-shadow: inset 0 -4px 0 $orange;
 		}
 	}
 }
 
+// NAV PRIMARY LEFT
+// ====================
+
+.nav-primary-left {
+	@include span-columns(6);
+	@include margin(3.8em null null);
+	text-align: left;
+	a {
+		@include pad(1em);
+		&:hover {
+			// box-shadow: inset 0 -4px 0 transparentize($black,.9);
+			color: lighten($blue, 20);
+		}
+	}
+	&.selected {
+		a { color: $blue; }
+		box-shadow: inset 0 -4px 0 $orange;
+	}
+	li {
+		letter-spacing: .2em;
+	}
+}
+
+// NAV PRIMARY RIGHT
+// ====================
+
+.nav-primary-right {
+	@include span-columns(6);
+	@include omega;
+	@include text-align(right);
+	li {
+		font-size: 1rem;
+	}
+	a {
+		color: $white;
+	}
+	button {
+		@include pad(.5em null);
+		white-space: inherit;
+	}
+	.btn {
+		@include margin(1em 0 0 0);
+	}
+}
+
+// NAV UTILITY
+// ====================
+
 .nav-utility {
-	@include pad(1.2em 1em 0 0);
+	@include pad(1.2em 0 0 0);
 	text-align: right;
 	li {
 		display: inline-block;
@@ -84,10 +130,266 @@
 	}
 }
 
-.logo h2,
+// LOGO SUB HEAD AND NAV TYPE STYLE
+// =================================
+
+.logo-wrap h2,
 .nav-primary,
 .nav-utility {
 	font-family: $font-utility;
 	font-size: 1em;
 	text-transform: uppercase;
+}
+
+// HEAD - HOME
+// ============================================================
+
+.head-default {
+	.nav-mobile {
+		@extend .display-none;
+	}
+}
+
+// HEAD - HOME
+// ============================================================
+
+.head-home {
+	.nav-utility {
+		@include margin(3.4em null null);
+	}
+	.btn-cta {
+		@extend .display-none;
+	}
+	.nav-mobile {
+		@extend .display-none;
+	}
+}
+
+
+// HEAD - COLLAPSED
+// ============================================================
+
+.head-collapsed {
+	@include fill-parent;
+	top:0;
+	.head-left {
+		@include span-columns(1);
+		.logo-wrap a {
+			@include pad(.4em 0);
+			h2 {
+				@extend .display-none;
+			}
+		}
+		.logo {
+			@include size(4em 3em);
+			background-image: url(../_img/logo-shorthand.svg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+			img {
+				@extend .display-none;
+			}
+		}
+	}
+	.head-right {
+		@include span-columns(11);
+		.nav-primary-left {
+			@include margin(0 null 0 0);
+			a {
+				@include pad(1.5em 1em);
+			}
+		}
+		.nav-primary-right {
+			.nav-utility {
+				@extend .display-none;
+			}
+			button {
+				@include pad(.5em .8em);
+			}
+			.btn {
+				@include margin(.8em null null);
+			}
+		}
+	}
+	.nav-mobile {
+		@extend .display-none;
+	}
+}
+
+.head-collapsed-scrolled {
+	position: fixed;
+}
+
+// HEAD - TABLET
+// ============================================================
+
+.head-tablet {
+	@include span-columns(8);
+	@include shift(2);
+	.inner {
+		@include pad(0 1em);
+	}
+	.head-left {
+		@include span-columns(4);
+	}
+	.head-right {
+		@include span-columns(8);
+		@include text-align(right);
+		.nav-primary-left {
+			float: none;
+			width: auto;
+			display: inline-block;
+		}
+		.nav-primary-right {
+			float: right;
+			width: auto;
+			.btn {
+				@include margin(3.5em null null);
+			}
+			.nav-utility {
+				@extend .display-none;
+			}
+		}
+	}
+	.nav-mobile {
+		@extend .display-none;
+	}
+}
+
+// HEAD - MOBILE
+// ============================================================
+
+.head-mobile {
+	@include span-columns(4);
+	@include shift(4);
+	.inner {
+		@include pad(0 1em);
+	}
+	.head-left {
+		@include span-columns(8);
+	}
+	.head-right {
+		@extend .display-none;
+	}
+	.nav-mobile {
+		@include size(100%);
+		max-width: 6.4em;
+		@include margin(2em 0 0 0);
+		font-size: 1.2em;
+		.icon-nav-mobile {
+			@include size(1em);
+			@include margin(null .4em null null);
+			display: inline-block;
+			vertical-align: bottom;
+		}
+	}
+}
+
+// HEAD - MOBILE XS
+// ============================================================
+
+.head-mobile-xs {
+	@include span-columns(2.5);
+	@include shift(4.8);
+	.inner {
+		@include pad(0 1em);
+	}
+	.head-left {
+		@include span-columns(4);
+		.logo-wrap h2 {
+			@extend .display-none;
+		}
+	}
+	.head-left {
+		width: auto;
+		.logo-wrap a {
+			@include pad(.8em 0 1.2em);
+		}
+		.logo {
+			@include size(4em 3em);
+			background-image: url(../_img/logo-shorthand.svg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+			img {
+				@extend .display-none;
+			}
+		}
+	}
+	.head-right {
+		@extend .display-none;
+	}
+	.nav-mobile {
+		@include size(100%);
+		max-width: 6.4em;
+		float: right;
+		@include margin(.8em 0 0 0);
+		font-size: 1.2em;
+		.icon-nav-mobile {
+			@include size(1em);
+			@include margin(null .4em null null);
+			display: inline-block;
+			vertical-align: bottom;
+		}
+	}
+}
+
+// MOBILE NAV
+// ============================================================
+
+.mobile-nav-expanded {
+	.inner {
+		@include pad(0 1em);
+	}
+	&.head-mobile, &.head-mobile-xs {
+		.head-right {
+			display: initial;
+			@include fill-parent;
+			@include margin(0 0 1em);
+			@include pad(0 0 2em);
+			@extend .bg-grey;
+			@extend .inner-shadow;
+			.nav-primary-left,
+			.nav-primary-right,
+			.nav-utility {
+				@include fill-parent;
+				@include margin(0);
+				@include pad(0);
+				text-align: center;
+				li {
+					@include margin(0);
+					@include pad(0);
+					font-size: 1em;
+					a {
+						@include margin(.6em);
+						@include pad(0 .2em);
+					}
+				}
+			}
+			.nav-primary-left,
+			.nav-primary-right {
+				@include margin(1em null null);
+				// li {
+				// 	@include fill-parent;
+				// }
+			}
+			.btn-cta {
+				@include pad(0);
+			}
+		}
+		.nav-mobile {
+			@include size(100%);
+			transform: translate(0,.2em);
+			max-width: 6.4em;
+			color: $black;
+			@extend .bg-grey;
+			box-shadow: none;
+			.icon-nav-mobile-close {
+				@include size(1em);
+				@include margin(null .4em null null);
+				display: inline-block;
+				vertical-align: bottom;
+			}
+		}
+	}
 }

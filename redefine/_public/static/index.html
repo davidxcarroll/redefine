@@ -21,76 +21,122 @@
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<div class="outer head">
+<code>
+  <fieldset>
+    <legend>Navigation</legend>
+    <label><input type="radio" name="nav-option" id="default" checked>Default</label>
+    <label><input type="radio" name="nav-option" id="home">Home</label>
+    <label><input type="radio" name="nav-option" id="collapsed">Collapsed</label>
+    <label><input type="radio" name="nav-option" id="tablet">Tablet</label>
+    <label><input type="radio" name="nav-option" id="mobile">Mobile</label>
+    <label><input type="radio" name="nav-option" id="mobile-xs">Mobile XS</label>
+  </fieldset>
+</code>
+
+<div id="navigation" class="outer head head-default">
   <div class="inner">
     <div class="head-left">
-      <div class="logo">
+      <div class="logo-wrap">
         <a href="#">
           <h1>Redefine Facility Cleaning</h1>
-          <img src="_img/logo-logotype.svg">
+          <div class="logo">
+            <img src="_img/logo-logotype.svg">
+          </div>
           <h2>Facility Cleaning</h2>
         </a>
       </div>
     </div>
-    <div class="head-right">
-      <ul class="nav-utility">
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Staff</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Login</a></li>
-      </ul>
-      <ul class="nav-primary">
+    <button id="mobile-nav-button" class="btn btn-orange borderless nav-mobile"><div id="icon-nav" class="icon-nav-mobile"></div>Menu</button>
+    <div id="mobile-nav-links" class="head-right">
+      <div class="nav-primary nav-primary-left">
         <li><a href="#">About</a></li>
         <li class="selected"><a href="#">Services</a></li>
         <li><a href="#">Contact</a></li>
-      </ul>
-      <!-- <ul class="nav-contact">
-        <li><a href="#"><button class="btn btn-orange btn-small borderless">Contact</button></a></li>
-      </ul> -->
+      </div>
+      <div class="nav-primary nav-primary-right">
+        <div class="nav-utility">
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Staff</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Login</a></li>
+        </div>
+        <li><button class="btn btn-orange borderless btn-cta"><a href="#">Get started</a></button></li>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="outer hero bg-photo inner-shadow">
+<code>
+  <fieldset>
+    <legend>Hero</legend>
+    <label><input type="radio" name="hero-option" id="hero-a" checked>Option A</label>
+    <label><input type="radio" name="hero-option" id="hero-b">Option B</label>
+    <label><input type="radio" name="hero-option" id="hero-c">Option C</label>
+    <label><input type="radio" name="hero-option" id="hero-d">Option D</label>
+    <label><input type="radio" name="hero-option" id="hero-e">Option E</label>
+  </fieldset>
+</code>
+
+<div id="hero" class="outer hero hero-a inner-shadow">
   <div class="inner">
-    <div class="content bear-papa padding center content-dark">
-      <h1>Papa bear seems intense</h1>
-      <h2>Hot poridge, big hard bed, kinda angry</h2>
-      <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere.</p>
-      <button class="btn btn-orange btn-large">Button large</button>
+    <div class="content">
+      <div class="hero-box padding content-dark">
+        <h1>Catchy hero headline</h1>
+        <h2>Ut in nulla enim phas ellus magna</h2>
+        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
+      </div>
+      <button class="btn btn-orange btn-large">Get started</button>
     </div>
   </div>
   <div class="bg-image"><img src="_img/bg-photo.jpg"></div>
 </div>
 
-<div class="outer bg-blue inner-shadow">
+<code>
+  <fieldset>
+    <legend>Block - Basic</legend>
+    <label><input type="radio" name="basic-block-option" id="basic-blue" checked>Blue</label>
+    <label><input type="radio" name="basic-block-option" id="basic-suds_1">Suds 1</label>
+    <label><input type="radio" name="basic-block-option" id="basic-suds_2">Suds 2</label>
+    <label><input type="radio" name="basic-block-option" id="basic-white">White</label>
+    <label><input type="radio" name="basic-block-option" id="basic-black">Black</label>
+    <label><input type="radio" name="basic-block-option" id="basic-grey">Grey</label>
+  </fieldset>
+</code>
+
+<div id="basic" class="outer basic-blue inner-shadow">
   <div class="inner padding-y">
-    <div class="content bear-mama padding center content-light">
-      <h1>Mama bear</h1>
-      <h2>Everything is just right</h2>
+    <div class="content block-basic padding center">
+      <h1>Basic block</h1>
+      <h2>Vivamus hendrerit arcu sed erat</h2>
       <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere.</p>
-      <button class="btn btn-orange">Button</button>
-      <button class="btn btn-white">Secondary</button>
+      <button class="btn btn-primary">Button</button>
+      <button class="btn btn-secondary">Secondary</button>
     </div>
   </div>
 </div>
 
-<div class="outer bg-suds2">
+<code>Other</code>
+
+<div class="outer bg-suds_2 inner-shadow">
   <div class="inner padding-y">
     <div class="content bear-baby padding center content-dark bg-white drop-shadow">
-      <h3>Lil bud 1</h3>
+      <div class="icon icon-people"></div>
+      <h3>People</h3>
       <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
       <button class="btn btn-orange btn-small borderless">Primary</button>
       <button class="btn btn-blue btn-small">Secondary</button>
     </div>
     <div class="content bear-baby padding center content-dark bg-white drop-shadow">
-      <h3>Lil bud 2</h3>
+      <div class="icon icon-performance"></div>
+      <h3>Performance</h3>
       <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
       <button class="btn btn-orange btn-small borderless">Primary</button>
       <button class="btn btn-blue btn-small">Secondary</button>
     </div>
     <div class="content bear-baby padding center content-dark bg-white drop-shadow">
-      <h3>Lil bud 3</h3>
+      <div class="icon icon-purpose"></div>
+      <h3>Purpose</h3>
       <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
       <button class="btn btn-orange btn-small borderless">Primary</button>
       <button class="btn btn-blue btn-small">Secondary</button>
@@ -98,36 +144,45 @@
   </div>
 </div>
 
-<div class="outer">
+<div class="outer bg-white">
   <div class="inner padding-y">
     <div class="content padding goldie">
       <h1>Heading One In Condimentum Facilisis Porta Sed</h1>
       <p>Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna.</p>
       <h2>Heading Two Proin Quis Tortor Orci Etiam</h2>
       <p>Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna.</p>
-      <h3>Sed Auctor Neque Eu Tellus</h3>
+      <h3>Heading Three Sed Auctor Neque Eu Tellus</h3>
       <p>Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna.</p>
-      <h4>Heading One In Condimentum Facilisis Porta Sed</h4>
+      <h4>Heading Four In Condimentum Facilisis Porta Sed</h4>
       <p>Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna.</p>
-      <h5>Heading Two Proin Quis Tortor Orci Etiam</h5>
+      <h5>Heading Five Proin Quis Tortor Orci Etiam</h5>
       <p>Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna.</p>
-      <h6>Sed Auctor Neque Eu Tellus</h6>
+      <h6>Heading Six Sed Auctor Neque Eu Tellus</h6>
       <p>Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna.</p>
     </div>
     <div class="content side-bear">
-      <div class="content side side-1 padding content-light bg-suds1">
-        <h3>Side bear</h3>
+      <div class="content side padding content-light bg-suds_1">
+        <h3>Side block example</h3>
         <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-        <button class="btn btn-orange btn-small">Option 1</button>
+        <button class="btn btn-orange btn-small">Primary</button>
       </div>
-      <div class="content side side-2 padding content-dark bg-grey">
-        <h3>Maybe click</h3>
+      <div class="content side padding content-dark bg-grey">
+        <h3>Side block example</h3>
         <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-        <button class="btn btn-blue btn-small">Option 2</button>
+        <button class="btn btn-blue btn-small">Secondary</button>
+      </div>
+      <div class="content side padding content-light bg-black">
+        <h3>Side block example</h3>
+        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+        <button class="btn btn-white btn-small">Secondary</button>
       </div>
     </div>
   </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+<script src="dev.js"></script>
 
 </body>
 </html>

@@ -3,6 +3,7 @@
 
 .btn {
   @include margin(1em .5em);
+  color: $white;
   font-family: $font-utility;
   text-transform: uppercase;
   @include corners(6px);
@@ -72,4 +73,8 @@
     font-size: 1em;
     line-height: 1em;
   }
+}
+
+.btn-primary {
+  @extend .btn-orange;
 }

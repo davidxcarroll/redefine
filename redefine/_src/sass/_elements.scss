@@ -8,6 +8,10 @@
 // SELECTORS
 // ============================================================
 
+.display-none {
+	display: none;
+}
+
 .center { @include text-align(center); }
 
 .padding-x { @include pad(0 2em); }
@@ -19,17 +23,21 @@
 
 .bg-black      { background-color: $black; }
 .bg-blue       { background-color: $blue; }
-.bg-orange     { background-color: $blue; }
-.bg-suds-1     { background-color: $suds1; }
-.bg-suds-2     { background-color: $suds2; }
+// .bg-orange     { background-color: $orange; }
+.bg-suds_1     { background-color: $suds1; }
+.bg-suds_2     { background-color: $suds2; }
 .bg-grey       { background-color: lighten($black,65); }
 .bg-white      { background-color: $white; }
 
 .bg-white-gradient { @include linear-gradient(to top, darken($white, 10) 0%, $white 20%); }
 
-// .bg-photo {
-// 	background-image: url(../_img/bg-photo.jpg);
-// 	background-repeat: no-repeat;
-// 	background-size: cover;
-// 	background-position: center center;
-// }
+// ICONS
+// ==============================
+
+.icon {
+	@include size(6em);
+	@include margin(null auto 1em);
+	color: $blue;
+	background-repeat: no-repeat;
+	background-size: cover;
+}

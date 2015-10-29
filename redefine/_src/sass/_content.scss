@@ -41,29 +41,137 @@
 // ============================================================
 
 .hero {
-	min-height: 75vh;
+	// @include margin(null null $stroke);
+	min-height: 38em;
+	.content {
+		@include span-columns(5);
+		min-height: 100vh;
+	}
+}
+
+// HERO A =======================
+
+.hero-a {
 	.inner {
 		@include pad(4em 0 5em);
 	}
 	.content {
-		box-shadow:
-			0 $stroke 0 rgba(0,0,0,.1),
-			inset 0 -4px 0 rgba(0,0,0,.1);
-			@include linear-gradient(to top, darken($white, 10) 0%, $white 20%); }
-	.btn {
-		@include margin(0 null -2em);
+		.hero-box {
+			@include corners(.6em);
+			@extend .padding;
+			@extend .content-dark;
+			box-shadow:
+				0 $stroke 0 rgba(0,0,0,.1),
+				inset 0 -4px 0 rgba(0,0,0,.1);
+				@extend .bg-white;
+		}
 	}
 }
 
-.bear-papa {
-	@include span-columns(5);
-	@include corners(.6em);
+// HERO B =======================
+
+.hero-b {
+	// @include margin(null null $stroke);
+	.inner {
+		max-width: none;
+	}
+	.content {
+		@include span-columns(5);
+		@include pad(3em null null);
+		@extend .bg-white;
+		@extend .padding;
+		@extend .content-dark;
+		.btn {
+			@extend .borderless;
+		}
+	}
 }
 
-.bear-mama {
+// HERO C =======================
+
+.hero-c {
+	// @include margin(null null $stroke);
+	.inner {
+		max-width: none;
+	}
+	.content {
+		@include span-columns(5);
+		@include pad(3em null null);
+		@extend .bg-blue;
+		@extend .padding;
+		@extend .content-light;
+	}
+}
+
+// HERO D =======================
+
+.hero-d {
+	// @include margin(null null $stroke);
+	.content {
+		@include span-columns(5);
+		@include pad(3em null null);
+		@extend .bg-white;
+		@extend .padding;
+		@extend .center;
+		@extend .content-dark;
+		.btn {
+			@extend .borderless;
+		}
+	}
+}
+
+// HERO E =======================
+
+.hero-e {
+	// @include margin(null null $stroke);
+	.content {
+		@include span-columns(5);
+		@include pad(3em null null);
+		@extend .bg-blue;
+		@extend .padding;
+		@extend .center;
+		@extend .content-light;
+	}
+}
+
+// BLOCKS =======================
+
+.block-basic {
 	@include span-columns(8);
 	@include shift(2);
 }
+
+@each $color in orange, blue, suds_1, suds_2, white, black, grey {
+  .basic-#{$color} {
+    @extend .bg-#{$color};
+  }
+}
+@each $color in orange, blue, suds_1, suds_2, black {
+  .basic-#{$color} {
+    @extend .content-light;
+    .btn-secondary {
+    	@extend .btn-white;
+    }
+  }
+}
+@each $color in white, grey {
+  .basic-#{$color} {
+    @extend .content-dark;
+    .btn-secondary {
+    	@extend .btn-blue;
+    }
+  }
+}
+@each $color in white, grey {
+  .basic-#{$color} {
+    @extend .content-dark;
+    .btn-primary {
+    	@extend .borderless;
+    }
+  }
+}
+
+// WHATEVER =======================
 
 .bear-baby {
 	@include span-columns(4);
@@ -90,7 +198,7 @@
 	h1 { color: $blue; }
 	h2,
 	h3 { color: $black; }
-	p  { color: lighten($black, 20); }
+	p  { color: transparentize($black, .3); }
 }
 
 .content-light {
