@@ -6,8 +6,9 @@ body {
 }
 
 code {
-	display: block;
-	@include pad(2em);
+	@include display(none);
+	@include margin(2em 0);
+	@include pad(0 2em);
 	@include text-align(center);
 	clear: both;
 	fieldset {

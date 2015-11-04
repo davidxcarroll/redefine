@@ -33,12 +33,6 @@
 	overflow: hidden;
 }
 
-@mixin hidden {
-	display: none;
-}
-
-@each $icon in people, performance, purpose, nav-mobile, nav-mobile-close {
-  .icon-#{$icon} {
-    background-image: url('../_img/icon_#{$icon}.svg');
-  }
+@mixin display($attribute) {
+	display: $attribute;
 }

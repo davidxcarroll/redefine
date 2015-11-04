@@ -1,7 +1,6 @@
 // NAV
 
 $(document).ready(function(){
-
   $("#default").click(function(){
     $("#navigation").addClass("head-default").removeClass("head-home head-collapsed head-tablet head-mobile head-mobile-xs");
   });
@@ -22,43 +21,32 @@ $(document).ready(function(){
   });
 });
 
-// MOBILE NAV EXPANDED
-
-$(document).ready(function(){
-
-  $("#mobile-nav-button").click(function(){
-    // $("#mobile-nav-links").slideToggle();
-    $("#navigation").toggleClass("mobile-nav-expanded");
-    $("#icon-nav").toggleClass("icon-nav-mobile-close");
-  });
-
-});
-
 // HERO
 
 $(document).ready(function(){
-
   $("#hero-a").click(function(){
-    $("#hero").addClass("hero-a").removeClass("hero-b hero-c hero-d hero-e");
+    $("#hero").addClass("hero-a").removeClass("hero-b hero-c hero-d hero-e hero-f");
   });
   $("#hero-b").click(function(){
-    $("#hero").addClass("hero-b").removeClass("hero-a hero-c hero-d hero-e");
+    $("#hero").addClass("hero-b").removeClass("hero-a hero-c hero-d hero-e hero-f");
   });
   $("#hero-c").click(function(){
-    $("#hero").addClass("hero-c").removeClass("hero-a hero-b hero-d hero-e");
+    $("#hero").addClass("hero-c").removeClass("hero-a hero-b hero-d hero-e hero-f");
   });
   $("#hero-d").click(function(){
-    $("#hero").addClass("hero-d").removeClass("hero-a hero-b hero-c hero-e");
+    $("#hero").addClass("hero-d").removeClass("hero-a hero-b hero-c hero-e hero-f");
   });
   $("#hero-e").click(function(){
-    $("#hero").addClass("hero-e").removeClass("hero-a hero-b hero-c hero-d");
+    $("#hero").addClass("hero-e").removeClass("hero-a hero-b hero-c hero-d hero-f");
+  });
+  $("#hero-f").click(function(){
+    $("#hero").addClass("hero-f").removeClass("hero-a hero-b hero-c hero-d hero-e");
   });
 });
 
 // BASIC BLOCK
 
 $(document).ready(function(){
-
   $("#basic-blue").click(function(){
     $("#basic").addClass("basic-blue").removeClass("basic-suds_1 basic-suds_2 basic-white basic-black basic-grey");
   });
@@ -77,7 +65,6 @@ $(document).ready(function(){
   $("#basic-grey").click(function(){
     $("#basic").addClass("basic-grey").removeClass("basic-blue basic-suds_1 basic-suds_2 basic-white basic-black");
   });
-
 });
 
 // HIDE CODE

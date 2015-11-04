@@ -41,13 +41,13 @@
   background: none;
   &:hover, &:active, &:focus {
     color: $blue;
-    background: none;
+    background: transparentize($white,.8);
   }
 }
 
 .btn-white {
   @include border($stroke, 0, $white, 0);
-  background: none;
+  background: transparentize($black,.8);
   &:hover, &:active, &:focus {
     background: none;
   }

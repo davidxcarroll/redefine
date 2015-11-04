@@ -2,6 +2,9 @@
 // ============================================================
 
 .head {
+	@include fill-parent;
+	position: absolute;
+	top: 0;
 	font-family: $font-utility;
 	text-transform: uppercase;
 	background-color: $white;
@@ -28,12 +31,18 @@
 
 .logo-wrap {
 	@include text-align(center);
-	h1  { @include hidden; }
+	h1  { @include display(none); }
 	.logo {
-		img {
-			@include size(14em 3em);
-		}
+		@include size(14em 3em);
+		@include margin(0 auto .45em);
 	}
+	.logo-mobile {
+		@include display(none);
+	}
+	.svg-logotype-orange { fill: $orange; }
+	.svg-logotype-blue   { fill: $blue; }
+	.svg-logotype-suds1  { fill: $suds1; }
+	.svg-logotype-suds2  { fill: $suds2; }
 	h2  {
 		@include margin(0);
 		font-size: 1em;
@@ -43,8 +52,12 @@
 	a {
 		display: block;
 		@include pad(1.5em 0);
-		&:hover h2 {
-			color: lighten($blue, 20);
+		&:hover {
+			.svg-logotype-orange { fill: $orange-hover; }
+			.svg-logotype-blue,
+			.svg-logotype-suds1,
+			.svg-logotype-suds2 { fill: lighten($blue, 20); }
+			h2 { color: lighten($blue, 20); }
 		}
 	}
 }
@@ -107,6 +120,20 @@
 	}
 }
 
+@keyframes slideDown {
+  from { top: -8em; }
+  to { top: 0; }
+}
+.head-fixed {
+	position: fixed;
+	animation-name: slideDown;
+  animation-duration: .2s;
+}
+
+.nav-mobile {
+	@include display(none);
+}
+
 // NAV UTILITY
 // ====================
 
@@ -144,24 +171,13 @@
 // HEAD - HOME
 // ============================================================
 
-.head-default {
-	.nav-mobile {
-		@extend .display-none;
-	}
-}
-
-// HEAD - HOME
-// ============================================================
-
 .head-home {
+	@include size(100% 8em);
 	.nav-utility {
 		@include margin(3.4em null null);
 	}
 	.btn-cta {
-		@extend .display-none;
-	}
-	.nav-mobile {
-		@extend .display-none;
+		@include display(none);
 	}
 }
 
@@ -170,25 +186,20 @@
 // ============================================================
 
 .head-collapsed {
-	@include fill-parent;
-	top:0;
 	.head-left {
 		@include span-columns(1);
 		.logo-wrap a {
 			@include pad(.4em 0);
 			h2 {
-				@extend .display-none;
+				@include display(none);
 			}
 		}
-		.logo {
+		.logo-mobile {
+			@include display(block);
 			@include size(4em 3em);
-			background-image: url(../_img/logo-shorthand.svg);
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center center;
-			img {
-				@extend .display-none;
-			}
+		}
+		.logo {
+			@include display(none);
 		}
 	}
 	.head-right {
@@ -201,7 +212,7 @@
 		}
 		.nav-primary-right {
 			.nav-utility {
-				@extend .display-none;
+				@include display(none);
 			}
 			button {
 				@include pad(.5em .8em);
@@ -211,13 +222,6 @@
 			}
 		}
 	}
-	.nav-mobile {
-		@extend .display-none;
-	}
-}
-
-.head-collapsed-scrolled {
-	position: fixed;
 }
 
 // HEAD - TABLET
@@ -247,17 +251,28 @@
 				@include margin(3.5em null null);
 			}
 			.nav-utility {
-				@extend .display-none;
+				@include display(none);
 			}
 		}
-	}
-	.nav-mobile {
-		@extend .display-none;
 	}
 }
 
 // HEAD - MOBILE
 // ============================================================
+
+.svg-nav-mobile {
+	fill: $white;
+}
+.svg-nav-mobile-close {
+	fill: $black;
+}
+.icon-nav-mobile,
+.icon-nav-mobile-close {
+	@include display(inline-block);
+}
+.icon-nav-hide {
+	@include display(none);
+}
 
 .head-mobile {
 	@include span-columns(4);
@@ -269,17 +284,16 @@
 		@include span-columns(8);
 	}
 	.head-right {
-		@extend .display-none;
+		@include display(none);
 	}
 	.nav-mobile {
+		@include display(inline-block);
 		@include size(100%);
 		max-width: 6.4em;
 		@include margin(2em 0 0 0);
 		font-size: 1.2em;
 		.icon-nav-mobile {
 			@include size(1em);
-			@include margin(null .4em null null);
-			display: inline-block;
 			vertical-align: bottom;
 		}
 	}
@@ -297,7 +311,7 @@
 	.head-left {
 		@include span-columns(4);
 		.logo-wrap h2 {
-			@extend .display-none;
+			@include display(none);
 		}
 	}
 	.head-left {
@@ -305,21 +319,19 @@
 		.logo-wrap a {
 			@include pad(.8em 0 1.2em);
 		}
-		.logo {
+		.logo-mobile {
+			@include display(block);
 			@include size(4em 3em);
-			background-image: url(../_img/logo-shorthand.svg);
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center center;
-			img {
-				@extend .display-none;
-			}
+		}
+		.logo {
+			@include display(none);
 		}
 	}
 	.head-right {
-		@extend .display-none;
+		@include display(none);
 	}
 	.nav-mobile {
+		@include display(inline-block);
 		@include size(100%);
 		max-width: 6.4em;
 		float: right;
@@ -327,8 +339,6 @@
 		font-size: 1.2em;
 		.icon-nav-mobile {
 			@include size(1em);
-			@include margin(null .4em null null);
-			display: inline-block;
 			vertical-align: bottom;
 		}
 	}
@@ -369,9 +379,6 @@
 			.nav-primary-left,
 			.nav-primary-right {
 				@include margin(1em null null);
-				// li {
-				// 	@include fill-parent;
-				// }
 			}
 			.btn-cta {
 				@include pad(0);
@@ -386,8 +393,6 @@
 			box-shadow: none;
 			.icon-nav-mobile-close {
 				@include size(1em);
-				@include margin(null .4em null null);
-				display: inline-block;
 				vertical-align: bottom;
 			}
 		}

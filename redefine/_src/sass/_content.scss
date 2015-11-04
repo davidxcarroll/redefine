@@ -37,12 +37,22 @@
 	}
 }
 
+#bg-image-a {
+	display: block;	
+}
+
+#bg-image-b,
+#bg-image-c {
+	display: none;
+}
+
 // CONTENT
 // ============================================================
 
 .hero {
-	// @include margin(null null $stroke);
 	min-height: 38em;
+	@include margin(8em null null);
+	position: relative;
 	.content {
 		@include span-columns(5);
 		min-height: 100vh;
@@ -60,10 +70,10 @@
 			@include corners(.6em);
 			@extend .padding;
 			@extend .content-dark;
+			@extend .bg-white;
 			box-shadow:
 				0 $stroke 0 rgba(0,0,0,.1),
 				inset 0 -4px 0 rgba(0,0,0,.1);
-				@extend .bg-white;
 		}
 	}
 }
@@ -71,18 +81,18 @@
 // HERO B =======================
 
 .hero-b {
-	// @include margin(null null $stroke);
 	.inner {
-		max-width: none;
+		@include pad(4em 0 5em);
 	}
 	.content {
-		@include span-columns(5);
-		@include pad(3em null null);
-		@extend .bg-white;
-		@extend .padding;
-		@extend .content-dark;
-		.btn {
-			@extend .borderless;
+		.hero-box {
+			@include corners(.6em);
+			@extend .padding;
+			@extend .content-light;
+			background-color: transparentize($blue,0);
+			box-shadow:
+				0 $stroke 0 rgba(0,0,0,.1),
+				inset 0 -4px 0 rgba(0,0,0,.1);
 		}
 	}
 }
@@ -90,32 +100,34 @@
 // HERO C =======================
 
 .hero-c {
-	// @include margin(null null $stroke);
-	.inner {
-		max-width: none;
-	}
 	.content {
 		@include span-columns(5);
 		@include pad(3em null null);
-		@extend .bg-blue;
+		background-color: transparentize($white,.1);
 		@extend .padding;
-		@extend .content-light;
+		@extend .center;
+		.hero-box {
+			@extend .content-dark;
+		}
+		.btn {
+			@extend .borderless;
+			@include margin(9em null null);
+		}
 	}
 }
 
 // HERO D =======================
 
 .hero-d {
-	// @include margin(null null $stroke);
 	.content {
 		@include span-columns(5);
 		@include pad(3em null null);
-		@extend .bg-white;
+		@extend .bg-blue;
 		@extend .padding;
 		@extend .center;
-		@extend .content-dark;
+		@extend .content-light;
 		.btn {
-			@extend .borderless;
+			@include margin(9em null null);
 		}
 	}
 }
@@ -123,14 +135,29 @@
 // HERO E =======================
 
 .hero-e {
-	// @include margin(null null $stroke);
 	.content {
 		@include span-columns(5);
-		@include pad(3em null null);
+		@include pad(3em 4em 2em 0);
+		background-color: transparentize($white,.1);
+		box-shadow: -20em 0 0 transparentize($white,.1);
+		.hero-box {
+			@extend .content-dark;
+		}
+		.btn {
+			@extend .borderless;
+		}
+	}
+}
+
+// HERO F =======================
+
+.hero-f {
+	.content {
+		@include span-columns(5);
+		@include pad(3em 4em 2em 0);
 		@extend .bg-blue;
-		@extend .padding;
-		@extend .center;
 		@extend .content-light;
+		box-shadow: -20em 0 0 $blue;
 	}
 }
 
@@ -171,11 +198,66 @@
   }
 }
 
+// TRUSTED BY
+
+.trusted-by {
+	.content {
+		@include outer-container;
+	}
+	.trusted-by-title {
+		@include span-columns(2);
+	}
+	.trusted-by-list {
+		@include span-columns(10);
+		@include omega;
+		li {
+			@include span-columns(3);
+  		@include omega(4n);
+  		@include pad(null 1em);
+  		color: lighten($black, 30);
+  		font-weight: 900;
+  		text-align: center;
+  		.client-logo {
+  			@include size(6em);
+  			@include margin(null auto);
+  			.client-aca {
+  				fill: lighten($black, 30);
+  			}
+  		}
+		}
+	}
+}
+
+.home-about-buckets {
+	.content {
+		@include outer-container;
+	}
+	.item {
+		@include span-columns(4);
+		@include omega(3n);
+		@include corners(.6em);
+	}
+}
+
+.icon-contact {
+	@include size(6em);
+	@include margin(null auto);
+	.svg-contact {
+		fill: $white;
+	}
+}
+
 // WHATEVER =======================
 
-.bear-baby {
-	@include span-columns(4);
-	@include corners(.6em);
+.svg {
+	@include size(6em);
+	@include margin(null auto 1em);
+}
+
+.svg-people,
+.svg-performance,
+.svg-purpose {
+	fill: $blue;
 }
 
 .goldie {
@@ -198,12 +280,13 @@
 	h1 { color: $blue; }
 	h2,
 	h3 { color: $black; }
-	p  { color: transparentize($black, .3); }
+	p, li  { color: transparentize($black, .3); }
 }
 
 .content-light {
 	h1,
 	h2,
 	h3,
-	p  { color: $white; }
+	p,
+	li  { color: $white; }
 }
