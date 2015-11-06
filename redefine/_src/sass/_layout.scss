@@ -1,0 +1,19 @@
+.half {
+	@include span-columns(6);
+	@include omega(2n);
+}
+
+.third {
+	@include span-columns(4);
+	@include omega(3n);
+}
+
+.one-third {
+	@include span-columns(4);
+}
+.two-thirds {
+	@include span-columns(8);
+}
+.omega {
+	@include omega;
+}

@@ -3,20 +3,14 @@
 
 * { transition: all .1s ease-in-out; }
 
-button:hover {
-	cursor: pointer;
-}
+button:hover { cursor: pointer; }
 
 // SELECTORS
 // ============================================================
 
-.display-none  { display: none; }
-
-.center { @include text-align(center); }
-
 .padding-x { @include pad(0 2em); }
 .padding-y { @include pad(2em 0); }
-.padding { @include pad(2em); }
+.padding   { @include pad(2em); }
 
 .drop-shadow  { box-shadow: 0 $stroke 0 rgba(0,0,0,.1); }
 .inner-shadow { box-shadow: inset 0 $stroke 0 rgba(0,0,0,.1); }
@@ -26,22 +20,13 @@ button:hover {
 .bg-suds_1     { background-color: $suds1; }
 .bg-suds_2     { background-color: $suds2; }
 .bg-grey       { background-color: lighten($black,65); }
+.bg-grey-dark  { background-color: lighten($black,10); }
 .bg-white      { background-color: $white; }
 
-.bg-white-gradient { @include linear-gradient(to top, darken($white, 10) 0%, $white 20%); }
-
-@mixin image-replace() {
-	text-indent: -9999px;
-	overflow: hidden;
-}
-
 // ICONS
-// ==============================
+// ============================================================
 
-// .icon {
-// 	@include size(6em);
-// 	@include margin(null auto 1em);
-// 	color: $blue;
-// 	background-repeat: no-repeat;
-// 	background-size: cover;
-// }
+.icon-bucket {
+	@include size(6em);
+	@include margin(null auto);
+}

@@ -1,12 +1,16 @@
 // DEV
 // ============================================================
 
-body {
-	background: darken($white, 20);
+// body {
+// 	background: darken($white, 20);
+// }
+
+.section {
+	@include outer-container;
 }
 
 code {
-	@include display(none);
+	@include display(block);
 	@include margin(2em 0);
 	@include pad(0 2em);
 	@include text-align(center);

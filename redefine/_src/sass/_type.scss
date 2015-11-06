@@ -88,3 +88,19 @@ ul, li {
 	margin: 0;
 	padding: 0;
 }
+
+blockquote {
+	@include margin(0 0 .6em);
+	@include pad(0);
+	h1 {
+		font-family: $font-body;
+		font-weight: normal;
+		font-style: italic;
+	}
+}
+
+cite {
+	font-family: $font-subhead;
+	font-size: 1.4em;
+	font-style: normal;
+}

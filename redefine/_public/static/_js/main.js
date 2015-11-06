@@ -1,16 +1,32 @@
-// STICKY NAV
+// STICKY NAV - HOME
 
 $(window).on('scroll', function() {
   scrollPosition = $(this).scrollTop();
   if (scrollPosition >= $('#hero').height()*.8) {
-    $("#navigation").addClass("head-collapsed").removeClass("head-home");
+    $("#navigation-home").addClass("head-collapsed").removeClass("head-home");
   } else {
-    $("#navigation").addClass("head-home").removeClass("head-collapsed");
+    $("#navigation-home").addClass("head-home").removeClass("head-collapsed");
   }
   if (scrollPosition >= $('#hero').height()) {
-    $("#navigation").addClass("head-fixed");
+    $("#navigation-home").addClass("head-fixed");
   } else {
-    $("#navigation").removeClass("head-fixed");
+    $("#navigation-home").removeClass("head-fixed");
+  }
+});
+
+// STICKY NAV - DEFAULT
+
+$(window).on('scroll', function() {
+  scrollPosition = $(this).scrollTop();
+  if (scrollPosition >= $('#hero').height()*.8) {
+    $("#navigation-default").addClass("head-collapsed").removeClass("head-default");
+  } else {
+    $("#navigation-default").addClass("head-default").removeClass("head-collapsed");
+  }
+  if (scrollPosition >= $('#hero').height()) {
+    $("#navigation-default").addClass("head-fixed");
+  } else {
+    $("#navigation-default").removeClass("head-fixed");
   }
 });
 
@@ -23,3 +39,11 @@ $(document).ready(function(){
     $("#icon-nav-mobile-close").toggleClass("icon-nav-hide");
   });
 });
+
+// LOAD RANDOM HERO IMAGES
+
+var images = ['bg-image-01.jpg',
+              // 'bg-image-03.jpg',
+              'bg-image-07.jpg',
+              'bg-image-08.jpg'];
+$('<img src="_img/' + images[Math.floor(Math.random() * images.length)] + '">').appendTo('#bg-image-hero');

@@ -1,6 +1,10 @@
 // MIXINS
 // ============================================================
 
+@mixin display($attribute) {
+	display: $attribute;
+}
+
 @mixin border($size, $inset-size, $color, $darken) {
 	box-shadow:
 		inset 0 0 0 $size $color,
@@ -26,13 +30,27 @@
 	text-align: $alignment;
 }
 
+@each $alignment in left, right, center {
+  .#{$alignment} {
+    @include text-align($alignment);
+  }
+}
+
 @mixin replace {
+	@include display(block);
 	@include margin(0);
 	@include pad(0);
-	text-indent: -999px;
+	text-indent: -9999px;
 	overflow: hidden;
 }
 
-@mixin display($attribute) {
-	display: $attribute;
+@each $direction in top, bottom, left, right {
+	.margin-#{$direction} {
+		margin-#{$direction}: .4em;
+	}
+}
+@each $direction in top, bottom, left, right {
+	.margin-big-#{$direction} {
+		margin-#{$direction}: 2em;
+	}
 }

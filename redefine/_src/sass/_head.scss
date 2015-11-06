@@ -56,8 +56,8 @@
 			.svg-logotype-orange { fill: $orange-hover; }
 			.svg-logotype-blue,
 			.svg-logotype-suds1,
-			.svg-logotype-suds2 { fill: lighten($blue, 20); }
-			h2 { color: lighten($blue, 20); }
+			.svg-logotype-suds2 { fill: $blue-hover; }
+			h2 { color: $blue-hover; }
 		}
 	}
 }
@@ -83,18 +83,18 @@
 	@include margin(3.8em null null);
 	text-align: left;
 	a {
-		@include pad(1em);
+		@include pad(1em 1em 1.7em);
 		&:hover {
 			// box-shadow: inset 0 -4px 0 transparentize($black,.9);
-			color: lighten($blue, 20);
+			color: $blue-hover;
 		}
-	}
-	&.selected {
-		a { color: $blue; }
-		box-shadow: inset 0 -4px 0 $orange;
 	}
 	li {
 		letter-spacing: .2em;
+		&.selected {
+			a { color: $blue; }
+			box-shadow: inset 0 -4px 0 $orange;
+		}
 	}
 }
 
@@ -168,11 +168,18 @@
 	text-transform: uppercase;
 }
 
+// HEAD - DEFAULT
+// ============================================================
+
+// .head-default {
+// 	@include size(100% 8em);
+// }
+
 // HEAD - HOME
 // ============================================================
 
 .head-home {
-	@include size(100% 8em);
+	@include size(100% auto);
 	.nav-utility {
 		@include margin(3.4em null null);
 	}

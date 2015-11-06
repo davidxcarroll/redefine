@@ -1,6 +1,10 @@
 // STRUCTURE
 // ============================================================
 
+body {
+	@include margin(8em null null);
+}
+
 .outer,
 .inner,
 .content {
@@ -17,6 +21,11 @@
 }
 .content {
 	z-index: 3;
+}
+
+.inner-full-width {
+	@include fill-parent;
+	max-width: none;
 }
 
 .bg-image {
@@ -37,143 +46,73 @@
 	}
 }
 
-#bg-image-a {
-	display: block;	
+.bg-image-fade {
+	$fade-duration: 1s;
+  -webkit-animation: fade-in $fade-duration ease;
+  -moz-animation: fade-in ease-in-out $fade-duration both;
+  -ms-animation: fade-in ease-in-out $fade-duration both;
+  -o-animation: fade-in ease-in-out $fade-duration both;
+  animation: fade-in $fade-duration ease;
+  visibility: visible;
+  -webkit-backface-visibility: hidden;
 }
 
-#bg-image-b,
-#bg-image-c {
-	display: none;
-}
+@-webkit-keyframes fade-in {0%{opacity:0} 100%{opacity:1}}
+@-moz-keyframes fade-in {0%{opacity:0} 100%{opacity:1}}
+@-o-keyframes fade-in {0%{opacity:0} 100%{opacity:1}}
+@keyframes fade-in { 0%{opacity:0} 100%{opacity:1}}
 
 // CONTENT
 // ============================================================
 
 .hero {
 	min-height: 38em;
-	@include margin(8em null null);
 	position: relative;
-	.content {
-		@include span-columns(5);
-		min-height: 100vh;
-	}
-}
-
-// HERO A =======================
-
-.hero-a {
 	.inner {
 		@include pad(4em 0 5em);
-	}
-	.content {
-		.hero-box {
-			@include corners(.6em);
-			@extend .padding;
-			@extend .content-dark;
-			@extend .bg-white;
-			box-shadow:
-				0 $stroke 0 rgba(0,0,0,.1),
-				inset 0 -4px 0 rgba(0,0,0,.1);
+		.content {
+			@include span-columns(5);
+			min-height: 100vh;
+			.hero-box {
+				@include corners(.6em);
+				@extend .padding;
+				@extend .content-light;
+				background-color: transparentize($blue,0);
+				box-shadow:
+					0 $stroke 0 rgba(0,0,0,.1),
+					inset 0 -#{$stroke} 0 rgba(0,0,0,.1);
+			}
 		}
 	}
 }
 
-// HERO B =======================
-
-.hero-b {
-	.inner {
-		@include pad(4em 0 5em);
+.bg-image-transparent {
+	.bg-image {
+		opacity: .6;
 	}
-	.content {
-		.hero-box {
-			@include corners(.6em);
-			@extend .padding;
-			@extend .content-light;
-			background-color: transparentize($blue,0);
-			box-shadow:
-				0 $stroke 0 rgba(0,0,0,.1),
-				inset 0 -4px 0 rgba(0,0,0,.1);
-		}
+}
+.bg-image-transparent-more {
+	.bg-image {
+		opacity: .1;
 	}
 }
 
-// HERO C =======================
+// BLOCKS
+// ============================================================
 
-.hero-c {
-	.content {
-		@include span-columns(5);
-		@include pad(3em null null);
-		background-color: transparentize($white,.1);
-		@extend .padding;
-		@extend .center;
-		.hero-box {
-			@extend .content-dark;
-		}
-		.btn {
-			@extend .borderless;
-			@include margin(9em null null);
-		}
-	}
-}
-
-// HERO D =======================
-
-.hero-d {
-	.content {
-		@include span-columns(5);
-		@include pad(3em null null);
-		@extend .bg-blue;
-		@extend .padding;
-		@extend .center;
-		@extend .content-light;
-		.btn {
-			@include margin(9em null null);
-		}
-	}
-}
-
-// HERO E =======================
-
-.hero-e {
-	.content {
-		@include span-columns(5);
-		@include pad(3em 4em 2em 0);
-		background-color: transparentize($white,.1);
-		box-shadow: -20em 0 0 transparentize($white,.1);
-		.hero-box {
-			@extend .content-dark;
-		}
-		.btn {
-			@extend .borderless;
-		}
-	}
-}
-
-// HERO F =======================
-
-.hero-f {
-	.content {
-		@include span-columns(5);
-		@include pad(3em 4em 2em 0);
-		@extend .bg-blue;
-		@extend .content-light;
-		box-shadow: -20em 0 0 $blue;
-	}
-}
-
-// BLOCKS =======================
+// BASIC =======================
 
 .block-basic {
 	@include span-columns(8);
 	@include shift(2);
 }
 
-@each $color in orange, blue, suds_1, suds_2, white, black, grey {
+@each $color in orange, blue, suds_1, suds_2, white, black, grey-dark, grey {
   .basic-#{$color} {
     @extend .bg-#{$color};
   }
 }
-@each $color in orange, blue, suds_1, suds_2, black {
+@each $color in orange, blue, suds_1, suds_2, black, grey-dark {
   .basic-#{$color} {
     @extend .content-light;
     .btn-secondary {
@@ -198,7 +137,92 @@
   }
 }
 
-// TRUSTED BY
+.block-photo {
+	background-position: center center;
+	background-size: cover;
+}
+.block-photo-tall {
+	min-height: 80vh;
+}
+.block-photo-top {
+	background-position: top center;
+}
+.block-photo-profile {
+	height: 20em;
+}
+
+// HALVES =======================
+
+.block-halves {
+	@include fill-parent();
+	@include row(table);
+	.block-half {
+		height: 20em;
+		vertical-align: top;
+	}
+	.block-half-left {
+		@include span-columns(6);
+	}
+	.block-half-right {
+		@include span-columns(6);
+		@include reset-display;
+	}
+}
+
+// QUOTE =======================
+
+.block-quote {
+	.inner {
+		@include pad(6em 0);
+		.content {
+			@include span-columns(10);
+			@include shift(1);
+			blockquote {
+				position: relative;
+				@include margin(2em 0 0);
+				@include pad(0 4em);
+				.svg {
+					@include margin(0);
+					@include pad(0);
+					@include size(3em);
+					position: absolute;
+					top: -1em;
+				}
+				.svg-quote     { left: 0; }
+				.svg-quote-end { right: 0; }
+				cite {
+					@include display(inline-block);
+					@include margin(1em null null);
+				}
+				.cite-person {
+					font-weight: bold;
+				}
+				.cite-person,
+				.cite-title {
+					color: inherit;
+				}
+			}
+		}
+	}
+}
+
+// TESTIMONIAL (depends on quote)
+
+.block-testimonial {
+	min-height: 40em;
+	.inner {
+		.content {
+			@include span-columns(7);
+			@include shift(5);
+			blockquote {
+				@include margin(null null 2em);
+				@include pad(0 0 0 4em);
+			}
+		}
+	}
+}
+
+// TRUSTED BY =======================
 
 .trusted-by {
 	.content {
@@ -215,8 +239,10 @@
   		@include omega(4n);
   		@include pad(null 1em);
   		color: lighten($black, 30);
+  		font-family: $font-subhead;
   		font-weight: 900;
   		text-align: center;
+  		line-height: 1em;
   		.client-logo {
   			@include size(6em);
   			@include margin(null auto);
@@ -236,14 +262,37 @@
 		@include span-columns(4);
 		@include omega(3n);
 		@include corners(.6em);
+		h3 {
+			color: $blue;
+		}
 	}
 }
 
-.icon-contact {
-	@include size(6em);
-	@include margin(null auto);
-	.svg-contact {
-		fill: $white;
+// FORM - CONTACT =======================
+
+.form-contact {
+	label {
+		@extend h5;
+		// font-weight: normal;
+	}
+	input {
+		@include margin(null null 1.4em);
+		@include pad(1em);
+		font-family: $font-subhead;
+		font-weight: bold;
+		font-size: 1.6em;
+		background-color: $white;
+		box-shadow: none;
+		border: $stroke solid darken($white,15);
+		&:hover {
+			border: $stroke solid darken($white,20);
+		}
+		&:focus {
+			color: $black;
+			border: $stroke solid $suds1;
+			outline: none;
+			box-shadow: none;
+		}
 	}
 }
 
@@ -260,33 +309,18 @@
 	fill: $blue;
 }
 
-.goldie {
-	@include span-columns(8);
-}
-
-.side-bear {
-	@include span-columns(4);
-}
-
-.side {
-	@include margin(null null 2em);
-	@include corners(.6em);
-}
-
 // COLORS
 // ============================================================
 
 .content-dark {
 	h1 { color: $blue; }
 	h2,
-	h3 { color: $black; }
-	p, li  { color: transparentize($black, .3); }
+	h3, blockquote { color: $black; }
+	p, li, cite, h4, h5, h6 { color: transparentize($black, .3); }
+	.icon-svg, .svg-quote, .svg-quote-end { fill: $black; }
 }
 
 .content-light {
-	h1,
-	h2,
-	h3,
-	p,
-	li  { color: $white; }
+	h1, h2, h3, h4, h5, h6, p, li, blockquote, cite { color: $white; }
+	.icon-svg, .svg-quote, .svg-quote-end { fill: $white; }
 }
