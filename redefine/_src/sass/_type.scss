@@ -8,6 +8,9 @@
 a {
 	color: $orange;
 	text-decoration: none;
+	&:hover {
+		color: $orange-hover;
+	}
 }
 
 h1 {
@@ -104,3 +107,21 @@ cite {
 	font-size: 1.4em;
 	font-style: normal;
 }
+
+// COLORS
+// ============================================================
+
+.content-dark {
+	h1 { color: $blue; }
+	h2,
+	h3, blockquote { color: $black; }
+	p, li, cite, h4, h5, h6 { color: transparentize($black, .3); }
+	.icon-svg, .svg-quote, .svg-quote-end { fill: $black; }
+}
+
+.content-light {
+	h1, h2, h3, h4, h5, h6, p, li, blockquote, cite { color: $white; }
+	.icon-svg, .svg-quote, .svg-quote-end { fill: $white; }
+}
+
+

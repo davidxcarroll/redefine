@@ -1,3 +1,35 @@
+body {
+	@include media(min-width $mobile) {
+		@include margin(8em null null);
+	}
+	@include media(max-width $mobile) {
+		@include margin(5em null null);
+	}
+}
+
+.outer,
+.inner,
+.content {
+	position: relative;
+}
+
+.outer {
+	overflow: hidden;
+	z-index: 1;
+}
+.inner {
+	@include outer-container;
+	z-index: 2;
+}
+.content {
+	z-index: 3;
+}
+
+.inner-full-width {
+	@include fill-parent;
+	max-width: none;
+}
+
 .half {
 	@include span-columns(6);
 	@include omega(2n);
@@ -16,4 +48,548 @@
 }
 .omega {
 	@include omega;
+}
+
+// HEAD
+// ============================================================
+
+.head {
+	@include fill-parent;
+	height: 8em;
+	position: absolute;
+	top: 0;
+	z-index: 10;
+	a {
+		display: inline-block;
+	}
+}
+
+// ABOVE DESKTOP - 1100 ============================================================
+@include media(min-width $desktop) {
+	.head {
+		.head-left {
+			@include span-columns(3);
+			.logo-wrap {
+				@include text-align(center);
+			}
+		}
+		.head-right {
+			@include span-columns(9);
+			@include omega;
+		}
+		.nav-primary-left {
+			@include span-columns(6);
+		}
+		.nav-primary-right {
+			@include span-columns(6);
+			@include omega;
+		}
+	}
+}
+// DESKTOP (1100) AND DOWN ============================================================
+@include media(max-width $desktop) {
+	.head {
+		.inner {
+			@include pad(0 1em);
+		}
+		.head-left {
+			.logo-wrap {
+				.logo {
+					@include margin(null 0);
+				}
+			}
+		}
+		.head-right {
+			@include text-align(right);
+			.nav-primary-left {
+				float: none;
+				width: auto;
+				display: inline-block;
+			}
+			.nav-primary-right {
+				float: right;
+				width: auto;
+				.btn {
+					@include margin(3.5em null null);
+				}
+				.nav-utility {
+					@include display(none);
+				}
+			}
+		}
+	}
+}
+// DESKTOP (1100) TO TABLET (700) ============================================================
+@include media(max-width $desktop min-width $tablet) {
+	.head {
+		.head-left {
+			@include span-columns(3);
+		}
+	}
+}
+// TABLET (700) AND UP ============================================================
+@include media(min-width $tablet) {
+	.head {
+		.nav-mobile {
+			@include display(none);
+		}
+	}
+}
+// DESKTOP (1100) TO TABLET (700) ============================================================
+@include media(max-width $desktop min-width $tablet) {
+	.head {
+		.head-left {
+			@include span-columns(4.5);
+		}
+	}
+}
+// DESKTOP (1100) TO MOBILE (480) ============================================================
+@include media(min-width $mobile max-width $desktop) {
+	.head {
+		.head-right {
+			.nav-primary-right {
+				position: absolute;
+				top: 1em;
+				right: 1em;
+				.btn {
+					@include margin(0);
+				}
+			}
+		}
+	}
+}
+// TABLET (700) AND DOWN ============================================================
+@include media(max-width $tablet) {
+	.head {
+		.head-left {
+			@include span-columns(6);
+		}
+		.head-right {
+			@include display(none);
+		}
+	}
+	.icon-nav-mobile,
+	.icon-nav-mobile-close {
+		@include display(inline-block);
+	}
+	.icon-nav-hide {
+		@include display(none);
+	}
+	.head {
+		.inner {
+			@include pad(0 1em);
+		}
+		.nav-mobile {
+			position: absolute;
+			top: 1em;
+			right: 1em;
+			max-width: 6.4em;
+			font-size: 1.2em;
+			.icon-nav-mobile {
+				@include size(1em);
+				vertical-align: bottom;
+			}
+		}
+	}
+}
+// MOBILE XS (320) AND UP ============================================================
+@include media(min-width $mobile-xs) {
+	.head {
+		.logo-mobile {
+			@include display(none);
+		}
+	}
+}
+// MOBILE (480) AND DOWN ============================================================
+@include media(max-width $mobile) {
+	.head {
+		height: 5em;
+		min-width: 15em;
+		.head-left {
+			.logo-mobile {
+				@include display(block);
+				@include size(4em 3em);
+			}
+			.logo-wrap {
+				a {
+					@include padding(1em null);
+					.logo {
+						@include display(none);
+					}
+				}
+			}
+		}
+		.head-right,
+		.logo-wrap h2 {
+			@include display(none);
+		}
+		.nav-mobile {
+			top: .8em;
+			@include margin(0);
+		}
+	}
+}
+
+// NAV PRIMARY
+// ====================
+
+.nav-primary {
+	li {
+		display: inline-block;
+		font-size: 1em;
+		a {
+			display: block;
+		}
+	}
+}
+
+// NAV PRIMARY LEFT
+// ====================
+
+.nav-primary-left {
+	@include margin(3.8em null null);
+	a {
+		@include pad(1em 1em 1.7em);
+	}
+}
+
+// NAV PRIMARY RIGHT
+// ====================
+
+.nav-primary-right {
+	@include text-align(right);
+	li {
+		font-size: 1rem;
+	}
+	button {
+		@include pad(.5em null);
+		white-space: inherit;
+	}
+	.btn {
+		@include margin(1em 0 0 0);
+	}
+}
+
+// NAV UTILITY
+// ====================
+
+.nav-utility {
+	@include pad(1.2em 0 0 0);
+	li {
+		display: inline-block;
+		font-size: .8em;
+		a {
+			display: block;
+			@include pad(0em .5em);
+		}
+	}
+}
+
+// LOGO SUB HEAD AND NAV TYPE STYLE
+// =================================
+
+.logo-wrap h2,
+.nav-primary,
+.nav-utility {
+	font-family: $font-utility;
+	font-size: 1em;
+	text-transform: uppercase;
+}
+
+// HEAD - DEFAULT
+// ============================================================
+
+// HEAD - HOME
+// ============================================================
+
+.head-home {
+	@include size(100% auto);
+	.nav-utility {
+		@include margin(3.4em null null);
+	}
+	.btn-cta {
+		@include display(none);
+	}
+}
+
+// HEAD - COLLAPSED
+// ============================================================
+
+.head-collapsed {
+	height: auto;
+	.head-left {
+		@include span-columns(1);
+		.logo-wrap a {
+			@include pad(.4em 0);
+			h2 {
+				@include display(none);
+			}
+		}
+		.logo-mobile {
+			@include display(block);
+			@include size(4em 3em);
+		}
+		.logo {
+			@include display(none);
+		}
+	}
+	.head-right {
+		@include span-columns(11);
+		.nav-primary-left {
+			@include margin(0 null 0 0);
+			a {
+				@include pad(1.5em 1em);
+			}
+		}
+		.nav-primary-right {
+			.nav-utility {
+				@include display(none);
+			}
+			button {
+				@include pad(.5em .8em);
+			}
+			.btn {
+				@include margin(.8em null null);
+			}
+		}
+	}
+}
+
+// MOBILE NAV
+// ============================================================
+
+.mobile-nav-expanded {
+	.inner {
+		@include pad(0 1em);
+	}
+	&.head-mobile, &.head-mobile-xs {
+		.head-right {
+			display: initial;
+			@include fill-parent;
+			@include margin(0 0 1em);
+			@include pad(0 0 2em);
+			.nav-primary-left,
+			.nav-primary-right,
+			.nav-utility {
+				@include fill-parent;
+				@include margin(0);
+				@include pad(0);
+				li {
+					@include margin(0);
+					@include pad(0);
+					font-size: 1em;
+					a {
+						@include margin(.6em);
+						@include pad(0 .2em);
+					}
+				}
+			}
+			.nav-primary-left,
+			.nav-primary-right {
+				@include margin(1em null null);
+			}
+			.btn-cta {
+				@include pad(0);
+			}
+		}
+		.nav-mobile {
+			@include size(100%);
+			max-width: 6.4em;
+			.icon-nav-mobile-close {
+				@include size(1em);
+				vertical-align: bottom;
+			}
+		}
+	}
+}
+
+// HERO
+
+.hero {
+	min-height: 38em;
+	position: relative;
+	.inner {
+		@include pad(4em 0 5em);
+		.content {
+			@include span-columns(5);
+			min-height: 100vh;
+			.hero-box {
+				@extend .padding;
+			}
+		}
+	}
+}
+
+// BLOCK BASIC
+
+.block-basic {
+	@include span-columns(8);
+	@include shift(2);
+}
+
+// BLOCK PHOTO
+
+.block-photo-tall {
+	min-height: 80vh;
+}
+.block-photo-profile {
+	height: 20em;
+}
+
+// BLOCK HALVES
+
+.block-halves {
+	@include fill-parent();
+	@include row(table);
+	.block-half {
+		height: 20em;
+		vertical-align: top;
+	}
+	.block-half-left {
+		@include span-columns(6);
+	}
+	.block-half-right {
+		@include span-columns(6);
+		@include reset-display;
+	}
+}
+
+// ONE TWO THIRDS
+
+.block-halves {
+	@include fill-parent();
+	@include row(table);
+	.block-one-two-thirds-left {
+		@include span-columns(3);
+	}
+	.block-one-two-thirds-right {
+		@include span-columns(9);
+		@include reset-display;
+	}
+}
+
+// QUOTE
+
+.block-quote {
+	.inner {
+		@include pad(6em 0);
+		.content {
+			@include span-columns(10);
+			@include shift(1);
+			blockquote {
+				@include margin(2em 0 0);
+				@include pad(0 4em);
+				.svg {
+					@include margin(0);
+					@include pad(0);
+					@include size(3em);
+					position: absolute;
+					top: -1em;
+				}
+				.svg-quote     { left: 0; }
+				.svg-quote-end { right: 0; }
+				cite {
+					@include display(inline-block);
+					@include margin(1em null null);
+				}
+			}
+		}
+	}
+}
+
+// TESTIMONIAL (depends on quote)
+
+.block-testimonial {
+	min-height: 40em;
+	.inner {
+		.content {
+			@include span-columns(7);
+			@include shift(5);
+			blockquote {
+				@include margin(null null 2em);
+				@include pad(0 0 0 4em);
+			}
+		}
+	}
+}
+
+// TRUSTED BY
+
+.trusted-by {
+	.content {
+		@include outer-container;
+	}
+	.trusted-by-title {
+		@include span-columns(2);
+	}
+	.trusted-by-list {
+		@include span-columns(10);
+		@include omega;
+		li {
+			@include span-columns(3);
+  		@include omega(4n);
+  		@include pad(null 1em);
+  		.client-logo {
+  			@include size(6em);
+  			@include margin(null auto);
+  		}
+		}
+	}
+}
+
+// 3 COL BUCKETS
+
+.home-about-buckets {
+	.content {
+		@include outer-container;
+	}
+	.item {
+		@include span-columns(4);
+		@include omega(3n);
+	}
+}
+
+// FOOTER =======================
+
+.footer {
+	@include pad(0 0 4em);
+	.footer-nav {
+		@include span-columns(4);
+		@include margin(2.5em null null);
+		.footer-nav-list {
+			li {
+				@include margin(0 1em .5em 0);
+				@include display(inline-block);
+			}
+		}
+	}
+	.footer-newsletter {
+		@include span-columns(4);
+		.footer-newsletter-form {
+			position: relative;
+			input[type=text] {
+				@include padding(null 5em null null);
+			}
+			input[type=submit],
+			.footer-newsletter-btn {
+				position: absolute;
+				top: .5em;
+				right: .4em;
+				z-index: 1;
+				@include margin(0);
+			}
+		}
+	}
+	.footer-social {
+		@include span-columns(4);
+		@include margin(2.5em null null);
+		.footer-social-list li {
+			@include display(inline-block);
+		}
+		.svg {
+			@include size(3em);
+			@include margin(0 0 0 .5em);
+			@include pad(0);
+		}
+	}
 }

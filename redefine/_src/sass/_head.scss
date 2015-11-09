@@ -2,42 +2,25 @@
 // ============================================================
 
 .head {
-	@include fill-parent;
-	position: absolute;
-	top: 0;
 	font-family: $font-utility;
 	text-transform: uppercase;
 	background-color: $white;
 	box-shadow:
 		0 $stroke 0 rgba(0,0,0,.1),
 		inset 0 -4px 0 rgba(0,0,0,.03);
-	z-index: 10;
 	a {
-		display: inline-block;
 		color: $blue;
 	}
-}
-
-.head-left {
-	@include span-columns(3);
-}
-.head-right {
-	@include span-columns(9);
-	@include omega;
 }
 
 // LOGO
 // ====================
 
 .logo-wrap {
-	@include text-align(center);
 	h1  { @include display(none); }
 	.logo {
 		@include size(14em 3em);
 		@include margin(0 auto .45em);
-	}
-	.logo-mobile {
-		@include display(none);
 	}
 	.svg-logotype-orange { fill: $orange; }
 	.svg-logotype-blue   { fill: $blue; }
@@ -65,25 +48,12 @@
 // NAV PRIMARY
 // ====================
 
-.nav-primary {
-	li {
-		display: inline-block;
-		font-size: 1em;
-		a {
-			display: block;
-		}
-	}
-}
-
 // NAV PRIMARY LEFT
 // ====================
 
 .nav-primary-left {
-	@include span-columns(6);
-	@include margin(3.8em null null);
 	text-align: left;
 	a {
-		@include pad(1em 1em 1.7em);
 		&:hover {
 			// box-shadow: inset 0 -4px 0 transparentize($black,.9);
 			color: $blue-hover;
@@ -102,21 +72,8 @@
 // ====================
 
 .nav-primary-right {
-	@include span-columns(6);
-	@include omega;
-	@include text-align(right);
-	li {
-		font-size: 1rem;
-	}
 	a {
 		color: $white;
-	}
-	button {
-		@include pad(.5em null);
-		white-space: inherit;
-	}
-	.btn {
-		@include margin(1em 0 0 0);
 	}
 }
 
@@ -130,22 +87,14 @@
   animation-duration: .2s;
 }
 
-.nav-mobile {
-	@include display(none);
-}
-
 // NAV UTILITY
 // ====================
 
 .nav-utility {
-	@include pad(1.2em 0 0 0);
 	text-align: right;
 	li {
-		display: inline-block;
-		font-size: .8em;
 		a {
 			display: block;
-			@include pad(0em .5em);
 			color: lighten($black, 40);
 			&:hover {
 				color: $black;
@@ -171,237 +120,44 @@
 // HEAD - DEFAULT
 // ============================================================
 
-// .head-default {
-// 	@include size(100% 8em);
-// }
-
 // HEAD - HOME
 // ============================================================
-
-.head-home {
-	@include size(100% auto);
-	.nav-utility {
-		@include margin(3.4em null null);
-	}
-	.btn-cta {
-		@include display(none);
-	}
-}
-
 
 // HEAD - COLLAPSED
 // ============================================================
 
-.head-collapsed {
-	.head-left {
-		@include span-columns(1);
-		.logo-wrap a {
-			@include pad(.4em 0);
-			h2 {
-				@include display(none);
-			}
-		}
-		.logo-mobile {
-			@include display(block);
-			@include size(4em 3em);
-		}
-		.logo {
-			@include display(none);
-		}
-	}
-	.head-right {
-		@include span-columns(11);
-		.nav-primary-left {
-			@include margin(0 null 0 0);
-			a {
-				@include pad(1.5em 1em);
-			}
-		}
-		.nav-primary-right {
-			.nav-utility {
-				@include display(none);
-			}
-			button {
-				@include pad(.5em .8em);
-			}
-			.btn {
-				@include margin(.8em null null);
-			}
-		}
-	}
-}
-
 // HEAD - TABLET
 // ============================================================
-
-.head-tablet {
-	@include span-columns(8);
-	@include shift(2);
-	.inner {
-		@include pad(0 1em);
-	}
-	.head-left {
-		@include span-columns(4);
-	}
-	.head-right {
-		@include span-columns(8);
-		@include text-align(right);
-		.nav-primary-left {
-			float: none;
-			width: auto;
-			display: inline-block;
-		}
-		.nav-primary-right {
-			float: right;
-			width: auto;
-			.btn {
-				@include margin(3.5em null null);
-			}
-			.nav-utility {
-				@include display(none);
-			}
-		}
-	}
-}
 
 // HEAD - MOBILE
 // ============================================================
 
-.svg-nav-mobile {
-	fill: $white;
-}
-.svg-nav-mobile-close {
-	fill: $black;
-}
-.icon-nav-mobile,
-.icon-nav-mobile-close {
-	@include display(inline-block);
-}
-.icon-nav-hide {
-	@include display(none);
-}
-
-.head-mobile {
-	@include span-columns(4);
-	@include shift(4);
-	.inner {
-		@include pad(0 1em);
-	}
-	.head-left {
-		@include span-columns(8);
-	}
-	.head-right {
-		@include display(none);
-	}
-	.nav-mobile {
-		@include display(inline-block);
-		@include size(100%);
-		max-width: 6.4em;
-		@include margin(2em 0 0 0);
-		font-size: 1.2em;
-		.icon-nav-mobile {
-			@include size(1em);
-			vertical-align: bottom;
-		}
-	}
-}
+.svg-nav-mobile { fill: $white; }
+.svg-nav-mobile-close { fill: $black; }
 
 // HEAD - MOBILE XS
 // ============================================================
 
-.head-mobile-xs {
-	@include span-columns(2.5);
-	@include shift(4.8);
-	.inner {
-		@include pad(0 1em);
-	}
-	.head-left {
-		@include span-columns(4);
-		.logo-wrap h2 {
-			@include display(none);
-		}
-	}
-	.head-left {
-		width: auto;
-		.logo-wrap a {
-			@include pad(.8em 0 1.2em);
-		}
-		.logo-mobile {
-			@include display(block);
-			@include size(4em 3em);
-		}
-		.logo {
-			@include display(none);
-		}
-	}
-	.head-right {
-		@include display(none);
-	}
-	.nav-mobile {
-		@include display(inline-block);
-		@include size(100%);
-		max-width: 6.4em;
-		float: right;
-		@include margin(.8em 0 0 0);
-		font-size: 1.2em;
-		.icon-nav-mobile {
-			@include size(1em);
-			vertical-align: bottom;
-		}
-	}
-}
-
 // MOBILE NAV
 // ============================================================
 
+
 .mobile-nav-expanded {
-	.inner {
-		@include pad(0 1em);
-	}
 	&.head-mobile, &.head-mobile-xs {
 		.head-right {
-			display: initial;
-			@include fill-parent;
-			@include margin(0 0 1em);
-			@include pad(0 0 2em);
 			@extend .bg-grey;
 			@extend .inner-shadow;
 			.nav-primary-left,
 			.nav-primary-right,
 			.nav-utility {
-				@include fill-parent;
-				@include margin(0);
-				@include pad(0);
 				text-align: center;
-				li {
-					@include margin(0);
-					@include pad(0);
-					font-size: 1em;
-					a {
-						@include margin(.6em);
-						@include pad(0 .2em);
-					}
-				}
-			}
-			.nav-primary-left,
-			.nav-primary-right {
-				@include margin(1em null null);
-			}
-			.btn-cta {
-				@include pad(0);
 			}
 		}
 		.nav-mobile {
-			@include size(100%);
 			transform: translate(0,.2em);
-			max-width: 6.4em;
 			color: $black;
 			@extend .bg-grey;
 			box-shadow: none;
-			.icon-nav-mobile-close {
-				@include size(1em);
-				vertical-align: bottom;
-			}
 		}
 	}
 }

@@ -1,17 +1,17 @@
 // FOOTER =======================
 
 .footer {
-	@include pad(0 0 4em);
+	// @include pad(0 0 4em);
 	.footer-nav {
-		@include span-columns(4);
-		@include margin(2.5em null null);
+		// @include span-columns(4);
+		// @include margin(2.5em null null);
 		.footer-nav-list {
 			font-family: $font-utility;
 			font-weight: bold;
 			text-transform: uppercase;
 			li {
-				@include margin(0 1em .5em 0);
-				@include display(inline-block);
+				// @include margin(0 1em .5em 0);
+				// @include display(inline-block);
 				a {
 					color: lighten($black,20);
 					&:hover {
@@ -22,27 +22,18 @@
 		}
 	}
 	.footer-newsletter {
-		@include span-columns(4);
 		@include text-align(center);
 		.footer-newsletter-form {
-			position: relative;
 			input[type=text] {
-				@include padding(null 5em null null);
 				font-family: $font-subhead;
 				font-weight: bold;
 				font-size: 1.2em;
-				// border: $stroke solid darken($white,20);
 				border: none;
 				@extend .drop-shadow;
 				background-color: $white;
 			}
 			input[type=submit],
 			.footer-newsletter-btn {
-				position: absolute;
-				top: .5em;
-				right: .4em;
-				z-index: 1;
-				@include margin(0);
 				background-color: $blue;
 				box-shadow: inset 0 -#{$stroke} 0 darken($blue,5);
 				&:hover {
@@ -57,19 +48,13 @@
 		}
 	}
 	.footer-social {
-		@include span-columns(4);
-		@include margin(2.5em null null);
 		@include text-align(right);
 		.footer-social-list li {
-			@include display(inline-block);
 			a:hover .svg-social {
 				fill: $black;
 			}
 		}
 		.svg {
-			@include size(3em);
-			@include margin(0 0 0 .5em);
-			@include pad(0);
 			.svg-social {
 				fill: lighten($black,20);
 			}

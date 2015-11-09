@@ -1,33 +1,6 @@
 // STRUCTURE
 // ============================================================
 
-body {
-	@include margin(8em null null);
-}
-
-.outer,
-.inner,
-.content {
-	position: relative;
-}
-
-.outer {
-	overflow: hidden;
-	z-index: 1;
-}
-.inner {
-	@include outer-container;
-	z-index: 2;
-}
-.content {
-	z-index: 3;
-}
-
-.inner-full-width {
-	@include fill-parent;
-	max-width: none;
-}
-
 .bg-image {
 	position: absolute;
   top: -50%; 
@@ -66,16 +39,16 @@ body {
 // ============================================================
 
 .hero {
-	min-height: 38em;
-	position: relative;
+	// min-height: 38em;
+	// position: relative;
 	.inner {
-		@include pad(4em 0 5em);
+		// @include pad(4em 0 5em);
 		.content {
-			@include span-columns(5);
-			min-height: 100vh;
+			// @include span-columns(5);
+			// min-height: 100vh;
 			.hero-box {
 				@include corners(.6em);
-				@extend .padding;
+				// @extend .padding;
 				@extend .content-light;
 				background-color: transparentize($blue,0);
 				box-shadow:
@@ -102,10 +75,10 @@ body {
 
 // BASIC =======================
 
-.block-basic {
-	@include span-columns(8);
-	@include shift(2);
-}
+// .block-basic {
+// 	@include span-columns(8);
+// 	@include shift(2);
+// }
 
 @each $color in orange, blue, suds_1, suds_2, white, black, grey-dark, grey {
   .basic-#{$color} {
@@ -141,59 +114,41 @@ body {
 	background-position: center center;
 	background-size: cover;
 }
-.block-photo-tall {
-	min-height: 80vh;
-}
 .block-photo-top {
 	background-position: top center;
 }
-.block-photo-profile {
-	height: 20em;
+
+// FAQ =======================
+
+.faq-list {
+	li {
+		@include margin(null null 1em);
+		font-family: $font-head;
+		font-size: 1.4em;
+		font-weight: bold;
+		line-height: 1.2em;
+		&.selected a {
+			color: $white;
+		}
+		a {
+			color: $blue;
+		}
+	}
 }
 
-// HALVES =======================
-
-.block-halves {
-	@include fill-parent();
-	@include row(table);
-	.block-half {
-		height: 20em;
-		vertical-align: top;
-	}
-	.block-half-left {
-		@include span-columns(6);
-	}
-	.block-half-right {
-		@include span-columns(6);
-		@include reset-display;
-	}
+.faq-list-fixed {
+	position: fixed;
+  top: 4.5em;
+  height: 100%;
 }
 
 // QUOTE =======================
 
 .block-quote {
 	.inner {
-		@include pad(6em 0);
 		.content {
-			@include span-columns(10);
-			@include shift(1);
 			blockquote {
 				position: relative;
-				@include margin(2em 0 0);
-				@include pad(0 4em);
-				.svg {
-					@include margin(0);
-					@include pad(0);
-					@include size(3em);
-					position: absolute;
-					top: -1em;
-				}
-				.svg-quote     { left: 0; }
-				.svg-quote-end { right: 0; }
-				cite {
-					@include display(inline-block);
-					@include margin(1em null null);
-				}
 				.cite-person {
 					font-weight: bold;
 				}
@@ -206,46 +161,17 @@ body {
 	}
 }
 
-// TESTIMONIAL (depends on quote)
-
-.block-testimonial {
-	min-height: 40em;
-	.inner {
-		.content {
-			@include span-columns(7);
-			@include shift(5);
-			blockquote {
-				@include margin(null null 2em);
-				@include pad(0 0 0 4em);
-			}
-		}
-	}
-}
-
 // TRUSTED BY =======================
 
 .trusted-by {
-	.content {
-		@include outer-container;
-	}
-	.trusted-by-title {
-		@include span-columns(2);
-	}
 	.trusted-by-list {
-		@include span-columns(10);
-		@include omega;
 		li {
-			@include span-columns(3);
-  		@include omega(4n);
-  		@include pad(null 1em);
   		color: lighten($black, 30);
   		font-family: $font-subhead;
   		font-weight: 900;
   		text-align: center;
   		line-height: 1em;
   		.client-logo {
-  			@include size(6em);
-  			@include margin(null auto);
   			.client-aca {
   				fill: lighten($black, 30);
   			}
@@ -255,13 +181,7 @@ body {
 }
 
 .home-about-buckets {
-	.content {
-		@include outer-container;
-	}
 	.item {
-		@include span-columns(4);
-		@include omega(3n);
-		@include corners(.6em);
 		h3 {
 			color: $blue;
 		}
@@ -273,7 +193,6 @@ body {
 .form-contact {
 	label {
 		@extend h5;
-		// font-weight: normal;
 	}
 	input {
 		@include margin(null null 1.4em);
@@ -307,20 +226,4 @@ body {
 .svg-performance,
 .svg-purpose {
 	fill: $blue;
-}
-
-// COLORS
-// ============================================================
-
-.content-dark {
-	h1 { color: $blue; }
-	h2,
-	h3, blockquote { color: $black; }
-	p, li, cite, h4, h5, h6 { color: transparentize($black, .3); }
-	.icon-svg, .svg-quote, .svg-quote-end { fill: $black; }
-}
-
-.content-light {
-	h1, h2, h3, h4, h5, h6, p, li, blockquote, cite { color: $white; }
-	.icon-svg, .svg-quote, .svg-quote-end { fill: $white; }
 }
