@@ -118,6 +118,9 @@ body {
 			}
 		}
 	}
+	.head-fixed {
+		@include display(none);
+	}
 }
 // DESKTOP (1100) TO TABLET (700) ============================================================
 @include media(max-width $desktop min-width $tablet) {
@@ -230,6 +233,64 @@ body {
 	}
 }
 
+// MOBILE NAV
+// ============================================================
+@include media(max-width $tablet) {
+	.head.mobile-nav-expanded {
+		overflow: visible;
+		height: 100vh;
+		@include pad(0);
+		background-color: transparentize($blue,.1);
+		.inner {
+			// position: initial;
+			@include outer-container;
+			@include margin(0);
+			@include pad(1em);
+			background-color: $white;
+			.head-left {
+				.logo-wrap {
+					a {
+						@include padding(.5em 0);
+					}
+				}
+			}
+			.head-right {
+				@include span-columns(12);
+				display: block;
+				clear: both;
+				@include margin(1em 0);
+				@include pad(1em 0);
+				background-color: $grey;
+				.nav-primary,
+				.nav-primary-left,
+				.nav-primary-right,
+				.nav-utility {
+					@include display(block);
+					position: initial;
+					@include fill-parent;
+					@include margin(0);
+					@include text-align(center);
+					li {
+						@include display(inline-block);
+						@include margin(0);
+						font-size: 1em;
+						box-shadow: none;
+						a {
+							@include display(inline-block);
+							@include margin(.6em);
+							@include pad(0 .2em);
+						}
+					}
+				}
+				.btn-cta {
+					@include margin(1em null null);
+					@include padding(.75em 1em);
+				}
+			}
+		}
+	}
+}
+
 // NAV PRIMARY
 // ====================
 
@@ -303,7 +364,7 @@ body {
 // ============================================================
 
 .head-home {
-	@include size(100% auto);
+	@include size(100% 8em);
 	.nav-utility {
 		@include margin(3.4em null null);
 	}
@@ -350,54 +411,6 @@ body {
 			}
 			.btn {
 				@include margin(.8em null null);
-			}
-		}
-	}
-}
-
-// MOBILE NAV
-// ============================================================
-
-.mobile-nav-expanded {
-	.inner {
-		@include pad(0 1em);
-	}
-	&.head-mobile, &.head-mobile-xs {
-		.head-right {
-			display: initial;
-			@include fill-parent;
-			@include margin(0 0 1em);
-			@include pad(0 0 2em);
-			.nav-primary-left,
-			.nav-primary-right,
-			.nav-utility {
-				@include fill-parent;
-				@include margin(0);
-				@include pad(0);
-				li {
-					@include margin(0);
-					@include pad(0);
-					font-size: 1em;
-					a {
-						@include margin(.6em);
-						@include pad(0 .2em);
-					}
-				}
-			}
-			.nav-primary-left,
-			.nav-primary-right {
-				@include margin(1em null null);
-			}
-			.btn-cta {
-				@include pad(0);
-			}
-		}
-		.nav-mobile {
-			@include size(100%);
-			max-width: 6.4em;
-			.icon-nav-mobile-close {
-				@include size(1em);
-				vertical-align: bottom;
 			}
 		}
 	}

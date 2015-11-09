@@ -1,17 +1,5 @@
 // STICKY NAV - HOME
 
-// $(window).on('scroll', function() {
-//   var mq = window.matchMedia('@media all and (min s-width: 1100px)');
-//   if(mq.matches) {
-//     scrollPosition = $(this).scrollTop();
-//     if (scrollPosition >= $('#hero').height()) {
-//       $("#navigation-home").addClass("head-collapsed head-fixed").removeClass("head-home");
-//     } else {
-//       $("#navigation-home").addClass("head-home").removeClass("head-collapsed head-fixed");
-//     }
-//   }
-// });
-
 $(window).on('scroll', function() {
   scrollPosition = $(this).scrollTop();
   if (scrollPosition >= $('#hero').height()) {
@@ -43,15 +31,29 @@ $(window).on('scroll', function() {
   }
 });
 
-// MOBILE NAV EXPANDED
+// ================================================================================
+
+// HOME - MOBILE NAV EXPANDED
 
 $(document).ready(function(){
   $("#mobile-nav-button").click(function(){
-    $("#navigation").toggleClass("mobile-nav-expanded");
+    $("#navigation-home").toggleClass("mobile-nav-expanded");
     $("#icon-nav-mobile").toggleClass("icon-nav-hide");
     $("#icon-nav-mobile-close").toggleClass("icon-nav-hide");
   });
 });
+
+// DEFAULT - MOBILE NAV EXPANDED
+
+$(document).ready(function(){
+  $("#mobile-nav-button").click(function(){
+    $("#navigation-default").toggleClass("mobile-nav-expanded");
+    $("#icon-nav-mobile").toggleClass("icon-nav-hide");
+    $("#icon-nav-mobile-close").toggleClass("icon-nav-hide");
+  });
+});
+
+// ================================================================================
 
 // LOAD RANDOM HERO IMAGES
 
