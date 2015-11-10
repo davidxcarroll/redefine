@@ -16,13 +16,15 @@ a {
 h1 {
 	@include margin(0 0 .2em);
 	font-family: $font-head;
+	line-height: 1em;
 	@include media(min-width $tablet) {
 		font-size: 3em;
-		line-height: 1em;
 	}
 	@include media(max-width $tablet) {
-		font-size: 3em;
-		line-height: 1em;
+		font-size: 2.4em;
+	}
+	@include media(max-width $mobile-xs) {
+		font-size: 2em;
 	}
 }
 
@@ -34,8 +36,11 @@ h2 {
 		line-height: 1.2em;
 	}
 	@include media(max-width $tablet) {
-		font-size: 2em;
+		font-size: 1.8em;
 		line-height: 1em;
+	}
+	@include media(max-width $mobile-xs) {
+		font-size: 1.6em;
 	}
 }
 

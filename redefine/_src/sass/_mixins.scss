@@ -3,6 +3,13 @@
 
 @mixin display($attribute) {
 	display: $attribute;
+	// @if ($attribute == none) {
+	// 	visibility: hidden;
+	// } @else if ($attribute == block) {
+	// 	visibility: visible;
+	// } @else if ($attribute == inline-block) {
+	// 	visibility: visible;
+	// }
 }
 
 @mixin border($size, $inset-size, $color, $darken) {

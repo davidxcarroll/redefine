@@ -64,7 +64,55 @@ body {
 	}
 }
 
-// ABOVE DESKTOP - 1100 ============================================================
+// HERO - HOME
+// ============================================================
+
+.hero {
+	position: relative;
+}
+
+.bg-image-hero {
+	@include media(min-width $desktop) {
+		position: absolute;
+	  top: -50%;
+	  left: -50%;
+	  width: 200%;
+	  height: 200%;
+		img {
+			position: absolute;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  bottom: 0;
+		  margin: auto;
+		  min-width: 50%;
+		  min-height: 50%;
+		}
+	}
+	@include media(max-width $desktop) {
+		@include margin(null null -1em);
+	}
+}
+
+.bg-image {
+	position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+	img {
+		position: absolute;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  margin: auto;
+	  min-width: 50%;
+	  min-height: 50%;
+	}
+}
+
+// DESKTOP (1100) AND UP ============================================================
 @include media(min-width $desktop) {
 	.head {
 		.head-left {
@@ -83,6 +131,23 @@ body {
 		.nav-primary-right {
 			@include span-columns(6);
 			@include omega;
+		}
+	}
+	.hero {
+		min-height: 38em;
+		.inner {
+			@include pad(4em 0 5em);
+			.content {
+				@include span-columns(5);
+				min-height: 100vh;
+				.hero-box {
+					@include pad(2em);
+					@include corners(.6em);
+					box-shadow:
+						0 $stroke 0 rgba(0,0,0,.1),
+						inset 0 -#{$stroke} 0 rgba(0,0,0,.1);
+				}
+			}
 		}
 	}
 }
@@ -121,6 +186,17 @@ body {
 	.head-fixed {
 		@include display(none);
 	}
+	.hero {
+		.inner {
+			.content {
+				@include pad(2em);
+				@include text-align(center);
+				.btn {
+					@include margin(0);
+				}
+			}
+		}
+	}
 }
 // DESKTOP (1100) TO TABLET (700) ============================================================
 @include media(max-width $desktop min-width $tablet) {
@@ -146,7 +222,7 @@ body {
 		}
 	}
 }
-// DESKTOP (1100) TO MOBILE (480) ============================================================
+// DESKTOP (1100) TO MOBILE (410) ============================================================
 @include media(min-width $mobile max-width $desktop) {
 	.head {
 		.head-right {
@@ -156,6 +232,7 @@ body {
 				right: 1em;
 				.btn {
 					@include margin(0);
+					@include display(block);
 				}
 			}
 		}
@@ -165,18 +242,11 @@ body {
 @include media(max-width $tablet) {
 	.head {
 		.head-left {
-			@include span-columns(6);
+			@include span-columns(7);
 		}
 		.head-right {
 			@include display(none);
 		}
-	}
-	.icon-nav-mobile,
-	.icon-nav-mobile-close {
-		@include display(inline-block);
-	}
-	.icon-nav-hide {
-		@include display(none);
 	}
 	.head {
 		.inner {
@@ -185,12 +255,17 @@ body {
 		.nav-mobile {
 			position: absolute;
 			top: 1em;
-			right: 1em;
+			right: .2em;
 			max-width: 6.4em;
 			font-size: 1.2em;
-			.icon-nav-mobile {
+			.icon-nav-mobile,
+			.icon-nav-mobile-close {
+				@include display(inline-block);
 				@include size(1em);
 				vertical-align: bottom;
+			}
+			.icon-nav-hide {
+				@include display(none);
 			}
 		}
 	}
@@ -203,7 +278,7 @@ body {
 		}
 	}
 }
-// MOBILE (480) AND DOWN ============================================================
+// MOBILE (410) AND DOWN ============================================================
 @include media(max-width $mobile) {
 	.head {
 		height: 5em;
@@ -231,34 +306,29 @@ body {
 			@include margin(0);
 		}
 	}
+	.hero .inner .content {
+		@include pad(1em);
+	}
 }
 
 // MOBILE NAV
 // ============================================================
 @include media(max-width $tablet) {
 	.head.mobile-nav-expanded {
+		position: fixed;
 		overflow: visible;
 		height: 100vh;
 		@include pad(0);
 		background-color: transparentize($blue,.1);
 		.inner {
-			// position: initial;
 			@include outer-container;
 			@include margin(0);
-			@include pad(1em);
 			background-color: $white;
-			.head-left {
-				.logo-wrap {
-					a {
-						@include padding(.5em 0);
-					}
-				}
-			}
 			.head-right {
 				@include span-columns(12);
 				display: block;
 				clear: both;
-				@include margin(1em 0);
+				@include margin(0 0 1em);
 				@include pad(1em 0);
 				background-color: $grey;
 				.nav-primary,
@@ -283,6 +353,7 @@ body {
 					}
 				}
 				.btn-cta {
+					display: block;
 					@include margin(1em null null);
 					@include padding(.75em 1em);
 				}
@@ -364,7 +435,7 @@ body {
 // ============================================================
 
 .head-home {
-	@include size(100% 8em);
+	@include size(100% null);
 	.nav-utility {
 		@include margin(3.4em null null);
 	}
@@ -416,28 +487,13 @@ body {
 	}
 }
 
-// HERO
-
-.hero {
-	min-height: 38em;
-	position: relative;
-	.inner {
-		@include pad(4em 0 5em);
-		.content {
-			@include span-columns(5);
-			min-height: 100vh;
-			.hero-box {
-				@extend .padding;
-			}
-		}
-	}
-}
-
 // BLOCK BASIC
 
 .block-basic {
-	@include span-columns(8);
-	@include shift(2);
+	@include media(min-width $desktop) {
+		@include span-columns(8);
+		@include shift(2);
+	}
 }
 
 // BLOCK PHOTO
@@ -455,15 +511,21 @@ body {
 	@include fill-parent();
 	@include row(table);
 	.block-half {
-		height: 20em;
+		@include media(min-width $desktop) {
+			height: 20em;
+		}
 		vertical-align: top;
 	}
 	.block-half-left {
-		@include span-columns(6);
+		@include media(min-width $tablet) {
+			@include span-columns(6);
+		}
 	}
 	.block-half-right {
-		@include span-columns(6);
-		@include reset-display;
+		@include media(min-width $tablet) {
+			@include span-columns(6);
+			@include reset-display;
+		}
 	}
 }
 
@@ -491,13 +553,18 @@ body {
 			@include shift(1);
 			blockquote {
 				@include margin(2em 0 0);
-				@include pad(0 4em);
+				@include media(min-width $tablet) {
+					@include pad(0 4em);
+				}
 				.svg {
 					@include margin(0);
 					@include pad(0);
 					@include size(3em);
 					position: absolute;
 					top: -1em;
+					@include media(max-width $tablet) {
+						@include display(none);
+					}
 				}
 				.svg-quote     { left: 0; }
 				.svg-quote-end { right: 0; }
@@ -533,14 +600,33 @@ body {
 		@include outer-container;
 	}
 	.trusted-by-title {
-		@include span-columns(2);
+		@include media(min-width $desktop) {
+			@include span-columns(2);
+		}
+		@include media(max-width $desktop) {
+			@include text-align(center);
+		}
 	}
 	.trusted-by-list {
-		@include span-columns(10);
+		@include media(min-width $desktop) {
+			@include span-columns(10);
+		}
+		@include media(max-width $desktop) {
+			@include fill-parent;
+		}
 		@include omega;
 		li {
-			@include span-columns(3);
-  		@include omega(4n);
+			@include media(min-width $desktop) {
+				@include span-columns(3);
+	  		@include omega(4n);
+  		}
+  		@include media(max-width $desktop min-width $mobile-xs) {
+				@include span-columns(6);
+	  		@include omega(2n);
+  		}
+  		@include media(max-width $mobile-xs) {
+				@include fill-parent;
+  		}
   		@include pad(null 1em);
   		.client-logo {
   			@include size(6em);
@@ -557,8 +643,22 @@ body {
 		@include outer-container;
 	}
 	.item {
-		@include span-columns(4);
-		@include omega(3n);
+		@include media(min-width $tablet) {
+			@include span-columns(4);
+			@include omega(3n);
+		}
+		@include media(max-width $tablet min-width $mobile-xs) {
+			@include outer-container;
+			@include display(inline-block);
+			@include text-align(left);
+			.svg {
+				@include margin(0 2em 0 0);
+				float: left;
+			}
+		}
+		@include media(max-width $tablet) {
+			@include margin(0 auto 2em);
+		}
 	}
 }
 
@@ -567,9 +667,18 @@ body {
 .footer {
 	@include pad(0 0 4em);
 	.footer-nav {
-		@include span-columns(4);
+		@include media(min-width $desktop) {
+			@include span-columns(4);
+		}
+		@include media(max-width $desktop) {
+			@include text-align(center);
+			@include margin(null null 3em);
+		}
 		@include margin(2.5em null null);
 		.footer-nav-list {
+			@include media(max-width $desktop) {
+				@include display(inline);
+			}
 			li {
 				@include margin(0 1em .5em 0);
 				@include display(inline-block);
@@ -577,7 +686,9 @@ body {
 		}
 	}
 	.footer-newsletter {
-		@include span-columns(4);
+		@include media(min-width $desktop) {
+			@include span-columns(4);
+		}
 		.footer-newsletter-form {
 			position: relative;
 			input[type=text] {
@@ -594,10 +705,18 @@ body {
 		}
 	}
 	.footer-social {
-		@include span-columns(4);
+		@include media(min-width $desktop) {
+			@include span-columns(4);
+			@include omega;
+		}
 		@include margin(2.5em null null);
-		.footer-social-list li {
-			@include display(inline-block);
+		.footer-social-list {
+			@include media(max-width $desktop) {
+				@include text-align(center);
+			}
+			li {
+				@include display(inline-block);
+			}
 		}
 		.svg {
 			@include size(3em);

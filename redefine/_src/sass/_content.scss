@@ -1,24 +1,6 @@
 // STRUCTURE
 // ============================================================
 
-.bg-image {
-	position: absolute;
-  top: -50%; 
-  left: -50%; 
-  width: 200%; 
-  height: 200%;
-	img {
-		position: absolute; 
-	  top: 0; 
-	  left: 0; 
-	  right: 0; 
-	  bottom: 0; 
-	  margin: auto; 
-	  min-width: 50%;
-	  min-height: 50%;
-	}
-}
-
 .bg-image-fade {
 	$fade-duration: 1s;
   -webkit-animation: fade-in $fade-duration ease;
@@ -39,21 +21,11 @@
 // ============================================================
 
 .hero {
-	// min-height: 38em;
-	// position: relative;
 	.inner {
-		// @include pad(4em 0 5em);
 		.content {
-			// @include span-columns(5);
-			// min-height: 100vh;
 			.hero-box {
-				@include corners(.6em);
-				// @extend .padding;
 				@extend .content-light;
 				background-color: transparentize($blue,0);
-				box-shadow:
-					0 $stroke 0 rgba(0,0,0,.1),
-					inset 0 -#{$stroke} 0 rgba(0,0,0,.1);
 			}
 		}
 	}
@@ -189,6 +161,10 @@
 }
 
 // FORM - CONTACT =======================
+
+input {
+	min-height: 3em;
+}
 
 .form-contact {
 	label {
