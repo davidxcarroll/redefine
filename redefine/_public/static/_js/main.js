@@ -38,9 +38,13 @@ $(window).on('scroll', function() {
 $(document).ready(function(){
   $("#mobile-nav-button").click(function(){
     $("#navigation-home").toggleClass("mobile-nav-expanded");
-    $("#icon-nav-mobile").toggleClass("icon-nav-hide");
-    $("#icon-nav-mobile-close").toggleClass("icon-nav-hide");
-    console.log("hey");
+    if ($("#icon-nav-mobile").hasClass("icon-nav-hide")) {
+      $(this).addClass("icon-nav-hide");
+      $("#icon-nav-mobile-close").removeClass("icon-nav-hide");
+    } else {
+      $(this).removeClass("icon-nav-hide");
+      $("#icon-nav-mobile-close").addClass("icon-nav-hide");
+    }
   });
 });
 

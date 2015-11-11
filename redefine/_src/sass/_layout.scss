@@ -31,20 +31,31 @@ body {
 }
 
 .half {
-	@include span-columns(6);
-	@include omega(2n);
+	@include media(min-width $tablet) {
+		@include span-columns(6);
+		@include omega(2n);
+	}
 }
 
 .third {
-	@include span-columns(4);
-	@include omega(3n);
+	@include media(min-width $tablet) {
+		@include span-columns(4);
+		@include omega(3n);
+	}
+	@include media(max-width $tablet) {
+		@include margin(0 0 2em 0);
+	}
 }
 
 .one-third {
-	@include span-columns(4);
+	@include media(min-width $tablet) {
+		@include span-columns(4);
+	}
 }
 .two-thirds {
-	@include span-columns(8);
+	@include media(min-width $tablet) {
+		@include span-columns(8);
+	}
 }
 .omega {
 	@include omega;
@@ -343,7 +354,9 @@ body {
 					li {
 						@include display(inline-block);
 						@include margin(0);
-						font-size: 1em;
+						font-size: 1.2em;
+    				line-height: .8em;
+						letter-spacing: 0;
 						box-shadow: none;
 						a {
 							@include display(inline-block);
@@ -356,6 +369,8 @@ body {
 					display: block;
 					@include margin(1em null null);
 					@include padding(.75em 1em);
+					font-size: 1.2em;
+    			line-height: 1.2em;
 				}
 			}
 		}
@@ -503,6 +518,9 @@ body {
 }
 .block-photo-profile {
 	height: 20em;
+	@include media(max-width $tablet) {
+		@include margin(null 2em);
+	}
 }
 
 // BLOCK HALVES
@@ -511,9 +529,9 @@ body {
 	@include fill-parent();
 	@include row(table);
 	.block-half {
-		@include media(min-width $desktop) {
-			height: 20em;
-		}
+		// @include media(min-width $desktop) {
+		// 	height: 20em;
+		// }
 		vertical-align: top;
 	}
 	.block-half-left {
@@ -526,6 +544,9 @@ body {
 			@include span-columns(6);
 			@include reset-display;
 		}
+	}
+	.block-photo {
+		min-height: 20em;
 	}
 }
 
@@ -547,21 +568,31 @@ body {
 
 .block-quote {
 	.inner {
-		@include pad(6em 0);
+		@include media(min-width $desktop) {
+			@include pad(6em 0);
+		}
+		@include media(max-width $desktop) {
+			@include pad(3em 0);
+		}
 		.content {
 			@include span-columns(10);
 			@include shift(1);
 			blockquote {
-				@include margin(2em 0 0);
+				@include media(min-width $desktop) {
+					@include margin(2em 0 0);
+				}
 				@include media(min-width $tablet) {
 					@include pad(0 4em);
+				}
+				@include media(max-width $desktop) {
+					@include text-align(center);
 				}
 				.svg {
 					@include margin(0);
 					@include pad(0);
 					@include size(3em);
 					position: absolute;
-					top: -1em;
+					top: -2em;
 					@include media(max-width $tablet) {
 						@include display(none);
 					}
@@ -580,14 +611,25 @@ body {
 // TESTIMONIAL (depends on quote)
 
 .block-testimonial {
-	min-height: 40em;
-	.inner {
-		.content {
-			@include span-columns(7);
-			@include shift(5);
-			blockquote {
-				@include margin(null null 2em);
-				@include pad(0 0 0 4em);
+	@include media(min-width $desktop) {
+		min-height: 40em;
+		.inner {
+			.content {
+				@include span-columns(7);
+				@include shift(5);
+				blockquote {
+					@include margin(null null 2em);
+					@include pad(0 0 0 4em);
+				}
+			}
+		}
+	}
+	@include media(max-width $desktop) {
+		.bg-image {
+			position: initial;
+			@include size(100%);
+			img {
+				position: initial;
 			}
 		}
 	}
@@ -652,13 +694,13 @@ body {
 			@include display(inline-block);
 			@include text-align(left);
 			.svg {
-				@include margin(0 2em 0 0);
+				@include margin(0 2em 2em 0);
 				float: left;
 			}
 		}
-		@include media(max-width $tablet) {
-			@include margin(0 auto 2em);
-		}
+		// @include media(max-width $tablet) {
+		// 	@include margin(0 auto 2em);
+		// }
 	}
 }
 

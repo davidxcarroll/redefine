@@ -108,6 +108,19 @@
 	}
 }
 
+.block-halves {
+	.faq-list {
+		@include media(max-width $desktop) {
+			@include display(none);
+		}
+	}
+	.faq-body {
+		@include media(max-width $desktop) {
+			@include fill-parent;
+		}
+	}
+}
+
 .faq-list-fixed {
 	position: fixed;
   top: 4.5em;
@@ -160,10 +173,18 @@
 	}
 }
 
+.icon-bucket {
+	@include media(max-width $desktop) {
+		@include margin(1em null);
+	}
+}
+
 // FORM - CONTACT =======================
 
 input {
-	min-height: 3em;
+	@include media(max-width $tablet) {
+		min-height: 3em;
+	}
 }
 
 .form-contact {
