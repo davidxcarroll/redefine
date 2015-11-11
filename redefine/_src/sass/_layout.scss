@@ -150,7 +150,7 @@ body {
 			@include pad(4em 0 5em);
 			.content {
 				@include span-columns(5);
-				min-height: 100vh;
+				// min-height: 75vh;
 				.hero-box {
 					@include pad(2em);
 					@include corners(.6em);
@@ -627,9 +627,15 @@ body {
 	@include media(max-width $desktop) {
 		.bg-image {
 			position: initial;
-			@include size(100%);
+			@include size(100% auto);
+			@include margin(null null -2em);
+			min-width: initial;
+			min-height: initial;
 			img {
 				position: initial;
+				@include size(100% auto);
+				min-width: initial;
+				min-height: initial;
 			}
 		}
 	}

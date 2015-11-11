@@ -175,7 +175,7 @@
 
 .icon-bucket {
 	@include media(max-width $desktop) {
-		@include margin(1em null);
+		@include margin(0 null .5em);
 	}
 }
 
