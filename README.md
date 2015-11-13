@@ -1,5 +1,5 @@
-# Redefine Facility Cleaning
+# [Redefine Facility Cleaning](http://re-define.com/)
 
-Digital headquarters for premier facility cleaner, Redefine, serving greater western North Carolina.
+Online headquarters for premier facility cleaner, Redefine, serving greater western North Carolina.
 
-Built with HTML and Sass. Influenced by Bourbon, Neat and Bitters. Compiled with Gulp. Managed on Wordpress using Advanced Custom Fields Pro.
+Built with [HTML](http://www.w3schools.com/html/) and [Sass](http://sass-lang.com/). Influenced by [Bourbon](http://bourbon.io/), [Neat](http://neat.bourbon.io/) and http://bitters.bourbon.io/. Compiled with [Gulp](http://gulpjs.com/). Managed on [Wordpress](https://wordpress.org/) including [Advanced Custom Fields Pro](http://advancedcustomfields.com/), [MailChimp for WP](https://wordpress.org/plugins/mailchimp-for-wp/), and [AccessPress Social Icons](https://wordpress.org/plugins/accesspress-social-icons/)
