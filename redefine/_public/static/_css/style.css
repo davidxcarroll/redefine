@@ -767,7 +767,7 @@ picture {
         width: 40.29137%; }
         .hero .inner .content:last-child {
           margin-right: 0; }
-        .hero .inner .content .hero-box {
+        .hero .inner .content .hero-box, .hero .inner .content .hero-sub-box {
           padding: 2em;
           border-top-left-radius: 0.6em;
           border-top-right-radius: 0.6em;
@@ -980,7 +980,7 @@ picture {
     font-size: .8em; }
     .nav-utility li a {
       display: block;
-      padding: 0em 0.5em; }
+      padding: 0em 0.8em; }
 
 .logo-wrap h2,
 .nav-primary,
@@ -990,6 +990,7 @@ picture {
   text-transform: uppercase; }
 
 .head-home {
+  height: auto;
   width: 100%; }
   .head-home .nav-utility {
     margin-top: 3.4em; }
@@ -1050,10 +1051,6 @@ picture {
 
 .block-photo-profile {
   height: 20em; }
-  @media screen and (max-width: 700px) {
-    .block-photo-profile {
-      margin-right: 2em;
-      margin-left: 2em; } }
 
 .block-halves {
   width: 100%;
@@ -1062,11 +1059,11 @@ picture {
   table-layout: fixed; }
   .block-halves .block-half {
     vertical-align: top; }
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 1100px) {
     .block-halves .block-half-left {
       display: table-cell;
       width: 50%; } }
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 1100px) {
     .block-halves .block-half-right {
       display: table-cell;
       width: 50%; } }
@@ -1078,10 +1075,27 @@ picture {
   display: table;
   width: 100%;
   table-layout: fixed; }
-  .block-halves .block-one-two-thirds-left {
+  @media screen and (min-width: 1100px) {
+    .block-halves .block-one-two-thirds-left {
+      display: table-cell;
+      width: 33.33333%; } }
+  @media screen and (min-width: 1100px) {
+    .block-halves .block-one-two-thirds-right {
+      display: table-cell;
+      width: 66.66667%; } }
+  @media screen and (max-width: 1100px) {
+    .block-halves .block-one-two-thirds-right {
+      width: 100%; } }
+
+.block-halves {
+  width: 100%;
+  display: table;
+  width: 100%;
+  table-layout: fixed; }
+  .block-halves .block-one-two-fifths-left {
     display: table-cell;
     width: 25%; }
-  .block-halves .block-one-two-thirds-right {
+  .block-halves .block-one-two-fifths-right {
     display: table-cell;
     width: 75%; }
 
@@ -1223,8 +1237,8 @@ picture {
       .trusted-by .trusted-by-list li {
         width: 100%; } }
     .trusted-by .trusted-by-list li .client-logo {
-      height: 6em;
-      width: 6em;
+      height: 8em;
+      width: 8em;
       margin-right: auto;
       margin-left: auto; }
 
@@ -1265,68 +1279,69 @@ picture {
       margin: 0 2em 2em 0;
       float: left; } }
 
-.footer {
-  padding: 0 0 4em; }
-  .footer .footer-nav {
-    margin-top: 2.5em; }
-    @media screen and (min-width: 1100px) {
-      .footer .footer-nav {
-        float: left;
-        display: block;
-        margin-right: 2.35765%;
-        width: 31.76157%; }
-        .footer .footer-nav:last-child {
-          margin-right: 0; } }
-    @media screen and (max-width: 1100px) {
-      .footer .footer-nav {
-        text-align: center;
-        margin-bottom: 3em; } }
-    @media screen and (max-width: 1100px) {
-      .footer .footer-nav .footer-nav-list {
-        display: inline; } }
-    .footer .footer-nav .footer-nav-list li {
-      margin: 0 1em 0.5em 0;
-      display: inline-block; }
+.footer .footer-nav {
+  margin-top: 2.5em; }
   @media screen and (min-width: 1100px) {
-    .footer .footer-newsletter {
+    .footer .footer-nav {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 31.76157%; }
-      .footer .footer-newsletter:last-child {
+      .footer .footer-nav:last-child {
         margin-right: 0; } }
-  .footer .footer-newsletter .footer-newsletter-form {
-    position: relative; }
-    .footer .footer-newsletter .footer-newsletter-form input[type=text] {
-      padding-right: 5em; }
-    .footer .footer-newsletter .footer-newsletter-form input[type=submit],
-    .footer .footer-newsletter .footer-newsletter-form .footer-newsletter-btn {
-      position: absolute;
-      top: .5em;
-      right: .4em;
-      z-index: 1;
-      margin: 0; }
-  .footer .footer-social {
-    margin-top: 2.5em; }
-    @media screen and (min-width: 1100px) {
-      .footer .footer-social {
-        float: left;
-        display: block;
-        margin-right: 2.35765%;
-        width: 31.76157%;
-        margin-right: 0; }
-        .footer .footer-social:last-child {
-          margin-right: 0; } }
-    @media screen and (max-width: 1100px) {
-      .footer .footer-social .footer-social-list {
-        text-align: center; } }
-    .footer .footer-social .footer-social-list li {
-      display: inline-block; }
-    .footer .footer-social .svg {
-      height: 3em;
-      width: 3em;
-      margin: 0 0 0 0.5em;
-      padding: 0; }
+  @media screen and (max-width: 1100px) {
+    .footer .footer-nav {
+      text-align: center;
+      margin-bottom: 3em; } }
+  @media screen and (max-width: 1100px) {
+    .footer .footer-nav .footer-nav-list {
+      display: inline; } }
+  .footer .footer-nav .footer-nav-list li {
+    margin: 0 1em 0.5em 0;
+    display: inline-block; }
+
+@media screen and (min-width: 1100px) {
+  .footer .footer-newsletter {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%; }
+    .footer .footer-newsletter:last-child {
+      margin-right: 0; } }
+
+.footer .footer-newsletter .footer-newsletter-form {
+  position: relative; }
+  .footer .footer-newsletter .footer-newsletter-form input[type=text] {
+    padding-right: 5em; }
+  .footer .footer-newsletter .footer-newsletter-form input[type=submit],
+  .footer .footer-newsletter .footer-newsletter-form .footer-newsletter-btn {
+    position: absolute;
+    top: .5em;
+    right: .4em;
+    z-index: 1;
+    margin: 0; }
+
+.footer .footer-social {
+  margin-top: 2.5em; }
+  @media screen and (min-width: 1100px) {
+    .footer .footer-social {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%;
+      margin-right: 0; }
+      .footer .footer-social:last-child {
+        margin-right: 0; } }
+  @media screen and (max-width: 1100px) {
+    .footer .footer-social .footer-social-list {
+      text-align: center; } }
+  .footer .footer-social .footer-social-list li {
+    display: inline-block; }
+  .footer .footer-social .svg {
+    height: 3em;
+    width: 3em;
+    margin: 0 0 0 0.5em;
+    padding: 0; }
 
 a * {
   transition: all 0.1s ease-in-out; }
@@ -1356,9 +1371,9 @@ button:hover {
 
 @media screen and (max-width: 700px) {
   .padding-y {
-    padding: 1em 0; } }
+    padding: 1em; } }
 
-.drop-shadow, .footer .footer-newsletter .footer-newsletter-form input[type=text] {
+.drop-shadow, .footer .footer-newsletter .mc4wp-form input[type=email] {
   box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1); }
 
 .inner-shadow, .mobile-nav-expanded.head-mobile .head-right, .mobile-nav-expanded.head-mobile-xs .head-right {
@@ -1490,25 +1505,26 @@ cite {
   font-size: 1.4em;
   font-style: normal; }
 
-.content-dark h1, .basic-white h1, .basic-grey h1 {
+.content-dark h1, .hero-sub-box h1, .basic-white h1, .basic-grey h1 {
   color: #0082CB; }
 
 .content-dark h2,
+.hero-sub-box h2,
 .basic-white h2,
 .basic-grey h2,
-.content-dark h3, .basic-white h3, .basic-grey h3, .content-dark blockquote, .basic-white blockquote, .basic-grey blockquote {
+.content-dark h3, .hero-sub-box h3, .basic-white h3, .basic-grey h3, .content-dark blockquote, .hero-sub-box blockquote, .basic-white blockquote, .basic-grey blockquote {
   color: #424243; }
 
-.content-dark p, .basic-white p, .basic-grey p, .content-dark li, .basic-white li, .basic-grey li, .content-dark cite, .basic-white cite, .basic-grey cite, .content-dark h4, .basic-white h4, .basic-grey h4, .content-dark h5, .basic-white h5, .basic-grey h5, .content-dark .form-contact label, .form-contact .content-dark label, .basic-white .form-contact label, .form-contact .basic-white label, .basic-grey .form-contact label, .form-contact .basic-grey label, .content-dark h6, .basic-white h6, .basic-grey h6 {
+.content-dark p, .hero-sub-box p, .basic-white p, .basic-grey p, .content-dark li, .hero-sub-box li, .basic-white li, .basic-grey li, .content-dark cite, .hero-sub-box cite, .basic-white cite, .basic-grey cite, .content-dark h4, .hero-sub-box h4, .basic-white h4, .basic-grey h4, .content-dark h5, .hero-sub-box h5, .basic-white h5, .basic-grey h5, .content-dark .form-contact label, .form-contact .content-dark label, .hero-sub-box .form-contact label, .form-contact .hero-sub-box label, .basic-white .form-contact label, .form-contact .basic-white label, .basic-grey .form-contact label, .form-contact .basic-grey label, .content-dark h6, .hero-sub-box h6, .basic-white h6, .basic-grey h6 {
   color: rgba(66, 66, 67, 0.7); }
 
-.content-dark .icon-svg, .basic-white .icon-svg, .basic-grey .icon-svg, .content-dark .svg-quote, .basic-white .svg-quote, .basic-grey .svg-quote, .content-dark .svg-quote-end, .basic-white .svg-quote-end, .basic-grey .svg-quote-end {
+.content-dark .icon-svg, .hero-sub-box .icon-svg, .basic-white .icon-svg, .basic-grey .icon-svg, .content-dark .svg-quote, .hero-sub-box .svg-quote, .basic-white .svg-quote, .basic-grey .svg-quote, .content-dark .svg-quote-end, .hero-sub-box .svg-quote-end, .basic-white .svg-quote-end, .basic-grey .svg-quote-end {
   fill: #424243; }
 
-.content-light h1, .hero .inner .content .hero-box h1, .basic-orange h1, .basic-blue h1, .basic-suds_1 h1, .basic-suds_2 h1, .basic-black h1, .basic-grey-dark h1, .content-light h2, .hero .inner .content .hero-box h2, .basic-orange h2, .basic-blue h2, .basic-suds_1 h2, .basic-suds_2 h2, .basic-black h2, .basic-grey-dark h2, .content-light h3, .hero .inner .content .hero-box h3, .basic-orange h3, .basic-blue h3, .basic-suds_1 h3, .basic-suds_2 h3, .basic-black h3, .basic-grey-dark h3, .content-light h4, .hero .inner .content .hero-box h4, .basic-orange h4, .basic-blue h4, .basic-suds_1 h4, .basic-suds_2 h4, .basic-black h4, .basic-grey-dark h4, .content-light h5, .hero .inner .content .hero-box h5, .basic-orange h5, .basic-blue h5, .basic-suds_1 h5, .basic-suds_2 h5, .basic-black h5, .basic-grey-dark h5, .content-light .form-contact label, .form-contact .content-light label, .hero .inner .content .hero-box .form-contact label, .form-contact .hero .inner .content .hero-box label, .basic-orange .form-contact label, .form-contact .basic-orange label, .basic-blue .form-contact label, .form-contact .basic-blue label, .basic-suds_1 .form-contact label, .form-contact .basic-suds_1 label, .basic-suds_2 .form-contact label, .form-contact .basic-suds_2 label, .basic-black .form-contact label, .form-contact .basic-black label, .basic-grey-dark .form-contact label, .form-contact .basic-grey-dark label, .content-light h6, .hero .inner .content .hero-box h6, .basic-orange h6, .basic-blue h6, .basic-suds_1 h6, .basic-suds_2 h6, .basic-black h6, .basic-grey-dark h6, .content-light p, .hero .inner .content .hero-box p, .basic-orange p, .basic-blue p, .basic-suds_1 p, .basic-suds_2 p, .basic-black p, .basic-grey-dark p, .content-light li, .hero .inner .content .hero-box li, .basic-orange li, .basic-blue li, .basic-suds_1 li, .basic-suds_2 li, .basic-black li, .basic-grey-dark li, .content-light blockquote, .hero .inner .content .hero-box blockquote, .basic-orange blockquote, .basic-blue blockquote, .basic-suds_1 blockquote, .basic-suds_2 blockquote, .basic-black blockquote, .basic-grey-dark blockquote, .content-light cite, .hero .inner .content .hero-box cite, .basic-orange cite, .basic-blue cite, .basic-suds_1 cite, .basic-suds_2 cite, .basic-black cite, .basic-grey-dark cite {
+.content-light h1, .hero-box h1, .basic-orange h1, .basic-blue h1, .basic-suds_1 h1, .basic-suds_2 h1, .basic-black h1, .basic-grey-dark h1, .content-light h2, .hero-box h2, .basic-orange h2, .basic-blue h2, .basic-suds_1 h2, .basic-suds_2 h2, .basic-black h2, .basic-grey-dark h2, .content-light h3, .hero-box h3, .basic-orange h3, .basic-blue h3, .basic-suds_1 h3, .basic-suds_2 h3, .basic-black h3, .basic-grey-dark h3, .content-light h4, .hero-box h4, .basic-orange h4, .basic-blue h4, .basic-suds_1 h4, .basic-suds_2 h4, .basic-black h4, .basic-grey-dark h4, .content-light h5, .hero-box h5, .basic-orange h5, .basic-blue h5, .basic-suds_1 h5, .basic-suds_2 h5, .basic-black h5, .basic-grey-dark h5, .content-light .form-contact label, .form-contact .content-light label, .hero-box .form-contact label, .form-contact .hero-box label, .basic-orange .form-contact label, .form-contact .basic-orange label, .basic-blue .form-contact label, .form-contact .basic-blue label, .basic-suds_1 .form-contact label, .form-contact .basic-suds_1 label, .basic-suds_2 .form-contact label, .form-contact .basic-suds_2 label, .basic-black .form-contact label, .form-contact .basic-black label, .basic-grey-dark .form-contact label, .form-contact .basic-grey-dark label, .content-light h6, .hero-box h6, .basic-orange h6, .basic-blue h6, .basic-suds_1 h6, .basic-suds_2 h6, .basic-black h6, .basic-grey-dark h6, .content-light p, .hero-box p, .basic-orange p, .basic-blue p, .basic-suds_1 p, .basic-suds_2 p, .basic-black p, .basic-grey-dark p, .content-light li, .hero-box li, .basic-orange li, .basic-blue li, .basic-suds_1 li, .basic-suds_2 li, .basic-black li, .basic-grey-dark li, .content-light blockquote, .hero-box blockquote, .basic-orange blockquote, .basic-blue blockquote, .basic-suds_1 blockquote, .basic-suds_2 blockquote, .basic-black blockquote, .basic-grey-dark blockquote, .content-light cite, .hero-box cite, .basic-orange cite, .basic-blue cite, .basic-suds_1 cite, .basic-suds_2 cite, .basic-black cite, .basic-grey-dark cite {
   color: #fff; }
 
-.content-light .icon-svg, .hero .inner .content .hero-box .icon-svg, .basic-orange .icon-svg, .basic-blue .icon-svg, .basic-suds_1 .icon-svg, .basic-suds_2 .icon-svg, .basic-black .icon-svg, .basic-grey-dark .icon-svg, .content-light .svg-quote, .hero .inner .content .hero-box .svg-quote, .basic-orange .svg-quote, .basic-blue .svg-quote, .basic-suds_1 .svg-quote, .basic-suds_2 .svg-quote, .basic-black .svg-quote, .basic-grey-dark .svg-quote, .content-light .svg-quote-end, .hero .inner .content .hero-box .svg-quote-end, .basic-orange .svg-quote-end, .basic-blue .svg-quote-end, .basic-suds_1 .svg-quote-end, .basic-suds_2 .svg-quote-end, .basic-black .svg-quote-end, .basic-grey-dark .svg-quote-end {
+.content-light .icon-svg, .hero-box .icon-svg, .basic-orange .icon-svg, .basic-blue .icon-svg, .basic-suds_1 .icon-svg, .basic-suds_2 .icon-svg, .basic-black .icon-svg, .basic-grey-dark .icon-svg, .content-light .svg-quote, .hero-box .svg-quote, .basic-orange .svg-quote, .basic-blue .svg-quote, .basic-suds_1 .svg-quote, .basic-suds_2 .svg-quote, .basic-black .svg-quote, .basic-grey-dark .svg-quote, .content-light .svg-quote-end, .hero-box .svg-quote-end, .basic-orange .svg-quote-end, .basic-blue .svg-quote-end, .basic-suds_1 .svg-quote-end, .basic-suds_2 .svg-quote-end, .basic-black .svg-quote-end, .basic-grey-dark .svg-quote-end {
   fill: #fff; }
 
 .btn {
@@ -1613,8 +1629,11 @@ cite {
   100% {
     opacity: 1; } }
 
-.hero .inner .content .hero-box {
-  background-color: #0082cb; }
+.hero-box {
+  background-color: #0082CB; }
+
+.hero-sub-box {
+  background-color: #fff; }
 
 .bg-image-transparent .bg-image {
   opacity: .6; }
@@ -1655,11 +1674,18 @@ cite {
 
 .block-quote .inner .content blockquote {
   position: relative; }
-  .block-quote .inner .content blockquote .cite-person {
+  .block-quote .inner .content blockquote cite .cite-person {
     font-weight: bold; }
-  .block-quote .inner .content blockquote .cite-person,
-  .block-quote .inner .content blockquote .cite-title {
+  .block-quote .inner .content blockquote cite .cite-person,
+  .block-quote .inner .content blockquote cite .cite-title {
     color: inherit; }
+
+.cite-person {
+  font-weight: bold; }
+
+.cite-person,
+.cite-title {
+  color: inherit; }
 
 .trusted-by .trusted-by-list li {
   color: #8e8e90;
@@ -1682,7 +1708,8 @@ cite {
   input {
     min-height: 3em; } }
 
-.form-contact input {
+.form-contact input,
+.form-contact textarea {
   margin-bottom: 1.4em;
   padding: 1em;
   font-family: "PT Sans", sans-serif;
@@ -1691,9 +1718,11 @@ cite {
   background-color: #fff;
   box-shadow: none;
   border: 4px solid #d9d9d9; }
-  .form-contact input:hover {
+  .form-contact input:hover,
+  .form-contact textarea:hover {
     border: 4px solid #cccccc; }
-  .form-contact input:focus {
+  .form-contact input:focus,
+  .form-contact textarea:focus {
     color: #424243;
     border: 4px solid #51B3DE;
     outline: none;
@@ -1763,9 +1792,9 @@ cite {
     color: #51B3DE; }
   .nav-primary-left li {
     letter-spacing: .2em; }
-    .nav-primary-left li.selected {
+    .nav-primary-left li.current_page_item {
       box-shadow: inset 0 -4px 0 #FF6B00; }
-      .nav-primary-left li.selected a {
+      .nav-primary-left li.current_page_item a {
         color: #0082CB; }
 
 .nav-primary-right a {
@@ -1789,7 +1818,7 @@ cite {
     color: #a8a8a9; }
     .nav-utility li a:hover {
       color: #424243; }
-  .nav-utility li.selected a {
+  .nav-utility li.current_page_item a {
     color: #424243; }
 
 .logo-wrap h2,
@@ -1828,32 +1857,58 @@ cite {
 
 .footer .footer-newsletter {
   text-align: center; }
-  .footer .footer-newsletter .footer-newsletter-form input[type=text] {
-    font-family: "PT Sans", sans-serif;
-    font-weight: bold;
-    font-size: 1.2em;
-    border: none;
-    background-color: #fff; }
-  .footer .footer-newsletter .footer-newsletter-form input[type=submit],
-  .footer .footer-newsletter .footer-newsletter-form .footer-newsletter-btn {
-    background-color: #0082CB;
-    box-shadow: inset 0-4px 0 #0072b2; }
-    .footer .footer-newsletter .footer-newsletter-form input[type=submit]:hover,
-    .footer .footer-newsletter .footer-newsletter-form .footer-newsletter-btn:hover {
-      background-color: #51B3DE;
-      box-shadow: inset 0-4px 0 #3caada; }
-  .footer .footer-newsletter .footer-newsletter-message {
-    font-size: 1em;
-    color: #999999; }
+  .footer .footer-newsletter .mc4wp-form {
+    position: relative;
+    font-family: "PT Serif", serif; }
+    .footer .footer-newsletter .mc4wp-form input[type=email] {
+      font-family: "PT Sans", sans-serif;
+      font-weight: bold;
+      font-size: 1.2em;
+      border: none;
+      background-color: #fff; }
+    .footer .footer-newsletter .mc4wp-form input[type=submit],
+    .footer .footer-newsletter .mc4wp-form input[type="button"],
+    .footer .footer-newsletter .mc4wp-form input[type="reset"],
+    .footer .footer-newsletter .mc4wp-form input[type="submit"],
+    .footer .footer-newsletter .mc4wp-form button,
+    .footer .footer-newsletter .mc4wp-form .footer-newsletter-btn {
+      font-family: "Montserrat", sans-serif;
+      font-size: .8em;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+      border-top-right-radius: 6px;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+      border-bottom-left-radius: 6px;
+      border-top-left-radius: 6px;
+      background-color: #0082CB;
+      box-shadow: inset 0-4px 0 #0072b2; }
+      .footer .footer-newsletter .mc4wp-form input[type=submit]:hover,
+      .footer .footer-newsletter .mc4wp-form input[type="button"]:hover,
+      .footer .footer-newsletter .mc4wp-form input[type="reset"]:hover,
+      .footer .footer-newsletter .mc4wp-form input[type="submit"]:hover,
+      .footer .footer-newsletter .mc4wp-form button:hover,
+      .footer .footer-newsletter .mc4wp-form .footer-newsletter-btn:hover {
+        background-color: #51B3DE;
+        box-shadow: inset 0-4px 0 #3caada; }
+    .footer .footer-newsletter .mc4wp-form .footer-newsletter-message {
+      font-size: 1em;
+      color: #999999; }
 
 .footer .footer-social {
-  text-align: right; }
+  text-align: right;
+  opacity: .5; }
   .footer .footer-social .footer-social-list li a:hover .svg-social {
     fill: #424243; }
   .footer .footer-social .svg .svg-social {
     fill: #757576; }
   .footer .footer-social .social-title {
     display: none; }
+
+.copyright p {
+  font-size: 1em;
+  color: #999999; }
 
 .section {
   max-width: 68em;

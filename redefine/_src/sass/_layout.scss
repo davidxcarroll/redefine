@@ -151,7 +151,7 @@ body {
 			.content {
 				@include span-columns(5);
 				// min-height: 75vh;
-				.hero-box {
+				.hero-box, .hero-sub-box {
 					@include pad(2em);
 					@include corners(.6em);
 					box-shadow:
@@ -427,7 +427,7 @@ body {
 		font-size: .8em;
 		a {
 			display: block;
-			@include pad(0em .5em);
+			@include pad(0em .8em);
 		}
 	}
 }
@@ -450,7 +450,7 @@ body {
 // ============================================================
 
 .head-home {
-	@include size(100% null);
+	@include size(100% auto);
 	.nav-utility {
 		@include margin(3.4em null null);
 	}
@@ -518,9 +518,6 @@ body {
 }
 .block-photo-profile {
 	height: 20em;
-	@include media(max-width $tablet) {
-		@include margin(null 2em);
-	}
 }
 
 // BLOCK HALVES
@@ -529,18 +526,15 @@ body {
 	@include fill-parent();
 	@include row(table);
 	.block-half {
-		// @include media(min-width $desktop) {
-		// 	height: 20em;
-		// }
 		vertical-align: top;
 	}
 	.block-half-left {
-		@include media(min-width $tablet) {
+		@include media(min-width $desktop) {
 			@include span-columns(6);
 		}
 	}
 	.block-half-right {
-		@include media(min-width $tablet) {
+		@include media(min-width $desktop) {
 			@include span-columns(6);
 			@include reset-display;
 		}
@@ -550,15 +544,35 @@ body {
 	}
 }
 
-// ONE TWO THIRDS
-
 .block-halves {
 	@include fill-parent();
 	@include row(table);
 	.block-one-two-thirds-left {
-		@include span-columns(3);
+		@include media(min-width $desktop) {
+			@include span-columns(4);
+		}
 	}
 	.block-one-two-thirds-right {
+		@include media(min-width $desktop) {
+			@include span-columns(8);
+			@include reset-display;
+		}
+		@include media(max-width $desktop) {
+			@include fill-parent;
+			@include reset-display;
+		}
+	}
+}
+
+// ONE TWO FIFTHS
+
+.block-halves {
+	@include fill-parent();
+	@include row(table);
+	.block-one-two-fifths-left {
+		@include span-columns(3);
+	}
+	.block-one-two-fifths-right {
 		@include span-columns(9);
 		@include reset-display;
 	}
@@ -677,7 +691,7 @@ body {
   		}
   		@include pad(null 1em);
   		.client-logo {
-  			@include size(6em);
+  			@include size(8em);
   			@include margin(null auto);
   		}
 		}
@@ -713,7 +727,6 @@ body {
 // FOOTER =======================
 
 .footer {
-	@include pad(0 0 4em);
 	.footer-nav {
 		@include media(min-width $desktop) {
 			@include span-columns(4);

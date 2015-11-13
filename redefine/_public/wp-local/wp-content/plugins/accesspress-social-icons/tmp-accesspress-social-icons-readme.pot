@@ -1,0 +1,454 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "AccessPress Social Icons"
+msgstr ""
+
+#. Short description.
+msgid "Add social media icons on your site | select from pre-designed sets or upload your own | create multiple icon sets | Use it anywhere using shortcode."
+msgstr ""
+
+#. Screenshot description.
+msgid "Backend Icons Sets Add Section(Using Pre Available Themes)"
+msgstr ""
+
+#. Screenshot description.
+msgid "Backend Icons Sets Add Section(Using Individual Icons Adder)"
+msgstr ""
+
+#. Screenshot description.
+msgid "Frontend Icons Sets Display"
+msgstr ""
+
+#. Screenshot description.
+msgid "Backend Lcon Sets Listing"
+msgstr ""
+
+#. Found in description header.
+msgid "Link-up your social profiles right from your website, in an easy and fun way!"
+msgstr ""
+
+#. Found in description header.
+msgid "Free Features:"
+msgstr ""
+
+#. Found in description header.
+msgid "Premium Features:"
+msgstr ""
+
+#. Found in description header.
+msgid "Premium Upgrade"
+msgstr ""
+
+#. Found in description header.
+msgid "Some Useful Links"
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Beautifully designed 12 icon themes</strong> "
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Select from pre available icon sets or upload your own</strong> "
+msgstr ""
+
+#. Found in description list item.
+msgid "Define size, set height, width of the icons"
+msgstr ""
+
+#. Found in description list item.
+msgid "Set margin / spacing between icons"
+msgstr ""
+
+#. Found in description list item.
+msgid "Link up your social media profiles, set link targets"
+msgstr ""
+
+#. Found in description list item.
+msgid "Enable and disable the tooltips"
+msgstr ""
+
+#. Found in description list item.
+msgid "Choose display type (vertical or horizontal), define no. of rows/columns "
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Create multiple-instance of the icon sets and use them in multiple places</strong> "
+msgstr ""
+
+#. Found in description list item.
+msgid "Get short code for each instance you design"
+msgstr ""
+
+#. Found in description list item.
+msgid "Use the short code anywhere you like: header, footer, in a widget, in the content area"
+msgstr ""
+
+#. Found in description list item.
+msgid "Define styles like shadow, borders for icons "
+msgstr ""
+
+#. Found in description list item.
+msgid "Define tooltips and style it with your own color, BG color. "
+msgstr ""
+
+#. Found in description list item.
+msgid "Add some feel on your icons  - add and customize the tooltip "
+msgstr ""
+
+#. Found in description list item.
+msgid "Enable or disable tooltips"
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Make it interactive, define hover animation on icons.</strong> "
+msgstr ""
+
+#. Found in description list item.
+msgid "Vertical and horizontal display option"
+msgstr ""
+
+#. Found in description list item.
+msgid "Select rows and columns"
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Real time live preview - check how it looks on your website before using it.</strong> "
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Order the icons - they way you like by using easy drag and drop feature.</strong> "
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Fully Responsive - compatible with mobile devices</strong>"
+msgstr ""
+
+#. Found in description list item.
+msgid "Anyone can use it, its as easy as drag and drop. "
+msgstr ""
+
+#. Found in description list item.
+msgid "Use your own image alt/title tags for hover-over text"
+msgstr ""
+
+#. Found in description list item.
+msgid "Google will love it!"
+msgstr ""
+
+#. Found in description list item.
+msgid "For more features like SVG icon sets, Font Awesome icon sets, Amazing sidebar options - upgrade to Pro. "
+msgstr ""
+
+#. Found in description list item.
+msgid "Dedicated email, forum support "
+msgstr ""
+
+#. Found in description list item.
+msgid "Get free updates for lifetime. "
+msgstr ""
+
+#. Found in description list item.
+msgid "For premium upgrade, please go <a href=\"http://accesspressthemes.com/wordpress-plugins/accesspress-social-icons-pro/\">here</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Support Email</strong>: support@accesspressthemes.com"
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Support Forum Link</strong>: http://accesspressthemes.com/support/"
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Website Link</strong>: http://accesspressthemes.com/"
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Youtube channel link</strong>: https://www.youtube.com/watch?v=TjZNcVG3fDE"
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Facebook link</strong>: https://www.facebook.com/AccessPressThemes "
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>AccessPress Social Icons</strong> - allows you to create various social icons and link your social profiles from your website. Its fun because - you can create, customize and build the beautiful icons for your social media profiles on your own."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>You can select icons from our 12 different beautifully designed sets, or upload our own icons set, customize them, define sizes, add several effects, add tooltip, set margins etc. Also you can define to appear the icons horizontally/vertically and no. of rows/columns!</strong>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Once the icon set is defined/customized - you can place it anywhere you want using short codes. Put it in the header, footer, in a widget, along with the page content - almost anywhere."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "You can have more than one icon sets created and used on the site. A large icon sets on the header and a tiny one on the footer - for example."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong><em>For more features like SVG icon sets, font awesome icon sets, amazing customization options, feature rich sidebar options - upgrade to PRO version.</em></strong>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "For a easy installation guide checkout the Installation tab above."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "For complete information and documentation regarding plugin,please visit below links."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<a href=\"https://accesspressthemes.com/wordpress-plugins/accesspress-social-icons/\">Plugin information</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<a href=\"https://accesspressthemes.com/documentation/documentationplugin-instruction-accesspress-social-icons/\">Docs</a>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Unzip accesspress-social-icons.zip"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Upload all the files to the /wp-content/plugins/accesspress-social-icons"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Activate the plugin through the 'Plugins' menu in WordPress."
+msgstr ""
+
+#. Found in installation list item.
+msgid "For customizing the plugin's settings, click on AccessPress Social Icons option menu in Wordpress left admin menu."
+msgstr ""
+
+#. Found in installation list item.
+msgid "To display the social icons in the frontend,please use [aps-social id=\"icon_id\"] shortcode wherever necessary or use AccessPress Social Widget from widget section."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Modified widget ID  "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Done some mofications for tooltip style  "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Checked headers already sent before session start "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated text domain to match plugin's slug "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css conflict for icon theme 9"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css conflict for icon theme 8"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css conflict for icon theme 7"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css conflict for icon theme 6"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css conflict for icon theme 5"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css conflict for icon theme 4"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css conflict for icon theme 3"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css conflict for icon theme 2"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css conflict for icon theme 1 "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated language file "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed some text domains "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css issues for icon theme 10"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css issues for icon theme 9"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css issues for icon theme 8"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css issues for icon theme 7"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css issues for icon theme 6 "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css issues for icon theme 5 "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css issues for icon theme 4 "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css issues for icon theme 3"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add small css to resolve conflict with border bottom for icons with theme"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css issues for icon theme 2 "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small css issues for icon theme 1 "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated edit section delete and down icon position"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Plugin Translation File"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated widget ID for preventing from conflict "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Some Placeholders for backend fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Done small update for the icons tooltip"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Done some modifications in icon sets edit section"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added some more translation ready texts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Icons Sets Copy Feature "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Few minor fixes for icon sets"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Done some modifications in about section"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed white background issue"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small bug regarding shadow blur"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small bug for unclosed aside tag in widget section"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small bug regarding undefined index in edit icons sets"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Done some code cleanup"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Done some minor changes in add and edit icon set section"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed some css bugs"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated upgrade section"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Some minor changes "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small bug regarding the icon theme switching  "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed small bug regarding plugin text domain for better translation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Replaced previous icons with same sized icons and more quality icons"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed some typos "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Plugin submitted to http://wordpress.org for review and approval"
+msgstr ""
+
+#. Found in faq header.
+msgid "What does this plugin do?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Can I upload my own icons too?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Where can I find the documentation for the plugin?"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "This plugin provides the ability to add your social profile icons in frontend with the help of shortcode or widget dynamically wherever necessary."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Yes you can build your own sets or choose from pre available sets as per your requirement."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Once you install the plugin , you can check some general documentation about how to use the plugin in the \"How to use\" page of the plugin.Complete documentation can be found  <a href=\"https://accesspressthemes.com/documentation/documentationplugin-instruction-accesspress-social-icons/\">here</a>."
+msgstr ""

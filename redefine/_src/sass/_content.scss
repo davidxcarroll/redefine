@@ -20,15 +20,14 @@
 // CONTENT
 // ============================================================
 
-.hero {
-	.inner {
-		.content {
-			.hero-box {
-				@extend .content-light;
-				background-color: transparentize($blue,0);
-			}
-		}
-	}
+.hero-box {
+	@extend .content-light;
+	background-color: $blue;
+}
+
+.hero-sub-box {
+	@extend .content-dark;
+	background-color: $white;
 }
 
 .bg-image-transparent {
@@ -134,16 +133,26 @@
 		.content {
 			blockquote {
 				position: relative;
-				.cite-person {
-					font-weight: bold;
-				}
-				.cite-person,
-				.cite-title {
-					color: inherit;
+				cite {
+					.cite-person {
+						font-weight: bold;
+					}
+					.cite-person,
+					.cite-title {
+						color: inherit;
+					}
 				}
 			}
 		}
 	}
+}
+
+.cite-person {
+	font-weight: bold;
+}
+.cite-person,
+.cite-title {
+	color: inherit;
 }
 
 // TRUSTED BY =======================
@@ -191,7 +200,8 @@ input {
 	label {
 		@extend h5;
 	}
-	input {
+	input,
+	textarea {
 		@include margin(null null 1.4em);
 		@include pad(1em);
 		font-family: $font-subhead;

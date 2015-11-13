@@ -29,7 +29,7 @@ button:hover { cursor: pointer; }
 		@include pad(2em 0);
 	}
 	@include media(max-width $tablet) {
-		@include pad(1em 0);
+		@include pad(1em null);
 	}
 }
 
